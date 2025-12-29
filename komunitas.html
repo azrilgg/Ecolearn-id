@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoLearn - Komunitas Hijau</title>
+
+    <!-- FONTS & ICONS -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&family=Space+Grotesk:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="komunitas.css">
+</head>
+
+<body>
+
+    <!-- UNIQUE COMMUNITY PRELOADER -->
+    <div id="u-preloader" class="u-preloader-community">
+        <div class="community-loader">
+            <div class="loader-globe"></div>
+            <div class="orbit-ring"></div>
+            <div class="orbit-ring delay"></div>
+            <div class="people-icon"><i class="fa-solid fa-users"></i></div>
+        </div>
+        <div class="loader-text">Connecting EcoWarriors...</div>
+    </div>
+
+    <script>
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('u-preloader');
+            setTimeout(() => {
+                preloader.classList.add('fade-out');
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 600);
+            }, 1200);
+        });
+    </script>
+
+    <!-- NAV -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo"><i class="fa-solid fa-leaf"></i> EcoLearn</div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Beranda</a>
+                <a href="belajar.html">Belajar</a>
+                <a href="komunitas.html" class="active">Komunitas</a>
+                <a href="quiz.html">Quiz</a>
+                <a href="kontak.html">Kontak</a>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- HEADER & LEADERBOARD -->
+    <section class="ultra-komunitas-section">
+        <div class="container">
+            <h1 class="text-gradient" style="font-size: 3.5rem; margin-bottom: 20px;" data-aos="fade-down">Top Eco
+                Warriors</h1>
+            <p style="color: var(--text-glass); max-width: 600px; margin: 0 auto;" data-aos="fade-up">
+                Mereka yang paling berkontribusi dalam menjaga kelestarian bumi minggu ini.
+            </p>
+
+            <div class="lb-podium-wrapper" id="podiumWrapper">
+
+                <!-- Rank 2 -->
+                <div class="podium-card podium-2" data-aos="fade-up" data-aos-delay="200" id="podium2">
+                    <span class="p-rank">2</span>
+                    <img src="image/user2.jpg" class="p-avatar" id="avatar2" alt="Rank 2">
+                    <h3 id="name2">Sarah J.</h3>
+                    <p style="color: var(--text-muted);" id="points2">Points: 2,450</p>
+                </div>
+
+                <!-- Rank 1 -->
+                <div class="podium-card podium-1" data-aos="fade-up" data-aos-delay="0" id="podium1">
+                    <div class="crown-icon">👑</div>
+                    <span class="p-rank">1</span>
+                    <img src="image/user1.jpg" class="p-avatar" id="avatar1" alt="Rank 1">
+                    <h3 id="name1">Andika P.</h3>
+                    <p style="color: var(--text-muted);" id="points1">Points: 3,100</p>
+                </div>
+
+                <!-- Rank 3 -->
+                <div class="podium-card podium-3" data-aos="fade-up" data-aos-delay="400" id="podium3">
+                    <span class="p-rank">3</span>
+                    <img src="image/user3.jpg" class="p-avatar" id="avatar3" alt="Rank 3">
+                    <h3 id="name3">Rangga S.</h3>
+                    <p style="color: var(--text-muted);" id="points3">Points: 1,980</p>
+                </div>
+
+            </div>
+
+            <!-- ACHIEVEMENTS SECTION -->
+            <div class="community-achievements" data-aos="fade-up" data-aos-delay="500">
+                <h3><i class="fa-solid fa-medal"></i> Your Quiz Achievements</h3>
+                <div class="achievements-display" id="communityAchievements">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMMUNITY STATISTICS SECTION -->
+    <section class="community-stats-section">
+        <div class="container">
+            <div class="stats-header" data-aos="fade-up">
+                <span class="stats-badge"><i class="fa-solid fa-chart-line"></i> Live Statistics</span>
+                <h2>Dampak Nyata Komunitas EcoLearn</h2>
+                <p>Lihat kontribusi nyata yang telah kita capai bersama!</p>
+            </div>
+
+            <div class="stats-period-tabs">
+                <button class="period-tab active" onclick="showStats('week')">Minggu Ini</button>
+                <button class="period-tab" onclick="showStats('month')">Bulan Ini</button>
+                <button class="period-tab" onclick="showStats('year')">Tahun Ini</button>
+            </div>
+
+            <div class="stats-grid" id="statsContainer">
+                <!-- Week Stats (Default) -->
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-icon green"><i class="fa-solid fa-tree"></i></div>
+                    <div class="stat-number" id="statTrees">127</div>
+                    <div class="stat-label">Pohon Ditanam</div>
+                    <div class="stat-trend up"><i class="fa-solid fa-arrow-up"></i> +23 minggu ini</div>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-icon blue"><i class="fa-solid fa-recycle"></i></div>
+                    <div class="stat-number" id="statRecycled">2,450</div>
+                    <div class="stat-label">Kg Sampah Didaur Ulang</div>
+                    <div class="stat-trend up"><i class="fa-solid fa-arrow-up"></i> +180 kg</div>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-icon yellow"><i class="fa-solid fa-users"></i></div>
+                    <div class="stat-number" id="statMembers">8,942</div>
+                    <div class="stat-label">Anggota Aktif</div>
+                    <div class="stat-trend up"><i class="fa-solid fa-arrow-up"></i> +156 baru</div>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-icon purple"><i class="fa-solid fa-lightbulb"></i></div>
+                    <div class="stat-number" id="statProjects">342</div>
+                    <div class="stat-label">Proyek Kreatif</div>
+                    <div class="stat-trend up"><i class="fa-solid fa-arrow-up"></i> +28 proyek</div>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="stat-icon orange"><i class="fa-solid fa-bolt"></i></div>
+                    <div class="stat-number" id="statEnergy">15.2K</div>
+                    <div class="stat-label">kWh Energi Dihemat</div>
+                    <div class="stat-trend up"><i class="fa-solid fa-arrow-up"></i> +2.1K kWh</div>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="stat-icon pink"><i class="fa-solid fa-earth-asia"></i></div>
+                    <div class="stat-number" id="statCO2">4.8</div>
+                    <div class="stat-label">Ton CO₂ Dikurangi</div>
+                    <div class="stat-trend up"><i class="fa-solid fa-arrow-up"></i> +0.6 ton</div>
+                </div>
+            </div>
+
+            <div class="stats-map-preview" data-aos="zoom-in">
+                <div class="map-header">
+                    <h4><i class="fa-solid fa-map-location-dot"></i> Sebaran Aksi Komunitas</h4>
+                    <span class="map-live"><i class="fa-solid fa-circle"></i> Live</span>
+                </div>
+                <div class="map-placeholder">
+                    <img src="image/komunitas-bg.jpg" alt="Community Map"
+                        style="width:100%; height:100%; object-fit:cover; opacity:0.3; border-radius:15px;">
+                    <div class="map-pins">
+                        <div class="map-pin" style="top:30%; left:25%;"><span>🌱 Jakarta</span></div>
+                        <div class="map-pin" style="top:45%; left:60%;"><span>♻️ Surabaya</span></div>
+                        <div class="map-pin" style="top:20%; left:75%;"><span>🌿 Bandung</span></div>
+                        <div class="map-pin" style="top:60%; left:40%;"><span>🌳 Yogyakarta</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT YOU CAN DO SECTION -->
+    <section class="community-activities-section">
+        <div class="container">
+            <div class="activities-header" data-aos="fade-up">
+                <span class="activities-badge"><i class="fa-solid fa-hand-fist"></i> Take Action</span>
+                <h2>Apa yang Bisa Kamu Lakukan?</h2>
+                <p>Bergabung dalam berbagai aktivitas komunitas dan buat dampak nyata!</p>
+            </div>
+
+            <div class="activities-grid">
+                <div class="activity-card featured" data-aos="fade-up" data-aos-delay="100">
+                    <div class="activity-icon"><i class="fa-solid fa-seedling"></i></div>
+                    <h3>Tanam Pohon Bersama</h3>
+                    <p>Ikuti program penanaman pohon di berbagai lokasi Indonesia. Setiap pohon berkontribusi untuk bumi
+                        yang lebih hijau.</p>
+                    <div class="activity-stats">
+                        <span><i class="fa-solid fa-users"></i> 1.2K peserta</span>
+                        <span><i class="fa-solid fa-calendar"></i> Setiap Minggu</span>
+                    </div>
+                    <button class="btn-primary activity-join" onclick="joinActivity('planting')">Gabung
+                        Sekarang</button>
+                </div>
+
+                <div class="activity-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="activity-icon blue"><i class="fa-solid fa-trash-can"></i></div>
+                    <h3>Beach & River Cleanup</h3>
+                    <p>Bersihkan pantai dan sungai dari sampah plastik bersama relawan lainnya.</p>
+                    <div class="activity-stats">
+                        <span><i class="fa-solid fa-users"></i> 856 peserta</span>
+                    </div>
+                    <button class="btn-glass activity-join" onclick="joinActivity('cleanup')">Daftar</button>
+                </div>
+
+                <div class="activity-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="activity-icon yellow"><i class="fa-solid fa-chalkboard-teacher"></i></div>
+                    <h3>Edukasi ke Sekolah</h3>
+                    <p>Jadi relawan pengajar lingkungan di sekolah-sekolah dasar.</p>
+                    <div class="activity-stats">
+                        <span><i class="fa-solid fa-school"></i> 45 sekolah</span>
+                    </div>
+                    <button class="btn-glass activity-join" onclick="joinActivity('education')">Jadi Volunteer</button>
+                </div>
+
+                <div class="activity-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="activity-icon purple"><i class="fa-solid fa-recycle"></i></div>
+                    <h3>Workshop Daur Ulang</h3>
+                    <p>Pelajari cara mengubah sampah menjadi produk bernilai tinggi.</p>
+                    <div class="activity-stats">
+                        <span><i class="fa-solid fa-calendar"></i> 2x sebulan</span>
+                    </div>
+                    <button class="btn-glass activity-join" onclick="joinActivity('workshop')">Ikuti Workshop</button>
+                </div>
+
+                <div class="activity-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="activity-icon orange"><i class="fa-solid fa-share-nodes"></i></div>
+                    <h3>Kampanye Digital</h3>
+                    <p>Bantu sebarkan kesadaran lingkungan melalui media sosial.</p>
+                    <div class="activity-stats">
+                        <span><i class="fa-solid fa-hashtag"></i> #EcoLearnAction</span>
+                    </div>
+                    <button class="btn-glass activity-join" onclick="joinActivity('campaign')">Mulai Share</button>
+                </div>
+
+                <div class="activity-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="activity-icon pink"><i class="fa-solid fa-building"></i></div>
+                    <h3>Corporate Partnership</h3>
+                    <p>Ajak perusahaanmu untuk menjadi partner dalam program lingkungan.</p>
+                    <div class="activity-stats">
+                        <span><i class="fa-solid fa-handshake"></i> 28 partner</span>
+                    </div>
+                    <button class="btn-glass activity-join" onclick="joinActivity('partner')">Jadi Partner</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRENDING TOPICS SECTION -->
+    <section class="trending-section">
+        <div class="container">
+            <div class="trending-header" data-aos="fade-up">
+                <span class="trending-badge"><i class="fa-solid fa-fire"></i> Trending Now</span>
+                <h2>Topik Trending Minggu Ini</h2>
+            </div>
+
+            <div class="trending-grid">
+                <div class="trending-card main" data-aos="fade-right">
+                    <img src="image/green-tech.jpg" alt="Green Tech">
+                    <div class="trending-overlay">
+                        <span class="trending-tag hot">🔥 HOT</span>
+                        <h3>Teknologi Ramah Lingkungan 2025</h3>
+                        <p>Inovasi terbaru yang akan mengubah cara kita menjaga bumi</p>
+                        <div class="trending-meta">
+                            <span><i class="fa-solid fa-eye"></i> 12.5K views</span>
+                            <span><i class="fa-solid fa-comments"></i> 234 diskusi</span>
+                        </div>
+                        <button class="btn-primary" onclick="openTrending(0)">Baca & Diskusi</button>
+                    </div>
+                </div>
+
+                <div class="trending-side">
+                    <div class="trending-card small" data-aos="fade-left" data-aos-delay="100"
+                        onclick="openTrending(1)">
+                        <img src="image/compost.jpg" alt="Composting">
+                        <div class="trending-info">
+                            <span class="trending-rank">#2</span>
+                            <h4>Tips Kompos di Rumah</h4>
+                            <span class="trending-views"><i class="fa-solid fa-eye"></i> 8.2K</span>
+                        </div>
+                    </div>
+                    <div class="trending-card small" data-aos="fade-left" data-aos-delay="200"
+                        onclick="openTrending(2)">
+                        <img src="image/sampah-daur.jpg" alt="Recycling">
+                        <div class="trending-info">
+                            <span class="trending-rank">#3</span>
+                            <h4>Bisnis dari Sampah Plastik</h4>
+                            <span class="trending-views"><i class="fa-solid fa-eye"></i> 6.8K</span>
+                        </div>
+                    </div>
+                    <div class="trending-card small" data-aos="fade-left" data-aos-delay="300"
+                        onclick="openTrending(3)">
+                        <img src="image/vertical-garden.jpg" alt="Urban Garden">
+                        <div class="trending-info">
+                            <span class="trending-rank">#4</span>
+                            <h4>Urban Farming Pemula</h4>
+                            <span class="trending-views"><i class="fa-solid fa-eye"></i> 5.4K</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="trending-topics-list" data-aos="fade-up">
+                <h4><i class="fa-solid fa-hashtag"></i> Hashtag Populer</h4>
+                <div class="hashtag-cloud">
+                    <span class="hashtag large">#ZeroWaste</span>
+                    <span class="hashtag">#RecycleIndonesia</span>
+                    <span class="hashtag large">#EcoLearn</span>
+                    <span class="hashtag">#GoGreen</span>
+                    <span class="hashtag">#SampahJadiBerkah</span>
+                    <span class="hashtag large">#PlastikStop</span>
+                    <span class="hashtag">#KomposRumahan</span>
+                    <span class="hashtag">#HijaukanIndonesia</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIVE DISCUSSION SECTION -->
+    <section class="live-discussion-section">
+        <div class="container">
+            <div class="live-header" data-aos="fade-up">
+                <div class="live-indicator">
+                    <span class="live-dot"></span>
+                    <span>LIVE</span>
+                </div>
+                <h2>Ruang Diskusi Live</h2>
+                <p>Bergabung dalam diskusi real-time dengan komunitas EcoLearn!</p>
+            </div>
+
+            <div class="live-rooms-grid">
+                <!-- Main Live Room -->
+                <div class="live-room main-room" data-aos="fade-up">
+                    <div class="room-header">
+                        <div class="room-status">
+                            <span class="room-live-badge"><i class="fa-solid fa-broadcast-tower"></i> Sedang
+                                Berlangsung</span>
+                            <span class="room-viewers"><i class="fa-solid fa-users"></i> 234 online</span>
+                        </div>
+                        <h3>🌿 Diskusi: Cara Memulai Gaya Hidup Zero Waste</h3>
+                        <div class="room-host">
+                            <img src="image/user1.jpg" alt="Host">
+                            <span>Host: <strong>Andika P.</strong> (Eco Expert)</span>
+                        </div>
+                    </div>
+
+                    <div class="room-chat" id="liveChatContainer">
+                        <div class="chat-messages" id="chatMessages">
+                            <div class="chat-message">
+                                <img src="image/user2.jpg" alt="">
+                                <div class="message-content">
+                                    <strong>Sarah</strong>
+                                    <p>Mulai dari refuse dulu, tolak yang tidak perlu! 🙅‍♀️</p>
+                                </div>
+                            </div>
+                            <div class="chat-message">
+                                <img src="image/user3.jpg" alt="">
+                                <div class="message-content">
+                                    <strong>Rangga</strong>
+                                    <p>Bawa tumbler dan tas belanja sendiri itu game changer!</p>
+                                </div>
+                            </div>
+                            <div class="chat-message host">
+                                <img src="image/user1.jpg" alt="">
+                                <div class="message-content">
+                                    <strong>Andika (Host)</strong>
+                                    <p>Betul! 5R: Refuse, Reduce, Reuse, Recycle, Rot. Mulai dari yang paling mudah ya!
+                                        💪</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat-input-area">
+                            <input type="text" id="chatInput" placeholder="Ketik pesanmu..."
+                                onkeypress="handleChatEnter(event)">
+                            <button class="chat-send" onclick="sendChatMessage()"><i
+                                    class="fa-solid fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="room-actions">
+                        <button class="btn-primary" onclick="joinLiveRoom()"><i class="fa-solid fa-headset"></i> Gabung
+                            Diskusi</button>
+                        <button class="btn-glass" onclick="toggleReminder()"><i class="fa-solid fa-bell"></i> Remind
+                            Me</button>
+                    </div>
+                </div>
+
+                <!-- Upcoming Rooms -->
+                <div class="upcoming-rooms" data-aos="fade-left">
+                    <h4><i class="fa-solid fa-calendar-alt"></i> Diskusi Mendatang</h4>
+
+                    <div class="upcoming-room">
+                        <div class="upcoming-time">
+                            <span class="time">14:00</span>
+                            <span class="day">Besok</span>
+                        </div>
+                        <div class="upcoming-info">
+                            <h5>♻️ Bisnis Daur Ulang untuk Pemula</h5>
+                            <span class="upcoming-host">dengan Maya R.</span>
+                        </div>
+                        <button class="remind-btn" onclick="setReminder(1)"><i class="fa-regular fa-bell"></i></button>
+                    </div>
+
+                    <div class="upcoming-room">
+                        <div class="upcoming-time">
+                            <span class="time">10:00</span>
+                            <span class="day">Sabtu</span>
+                        </div>
+                        <div class="upcoming-info">
+                            <h5>🌱 Q&A: Urban Farming di Apartemen</h5>
+                            <span class="upcoming-host">dengan Budi S.</span>
+                        </div>
+                        <button class="remind-btn" onclick="setReminder(2)"><i class="fa-regular fa-bell"></i></button>
+                    </div>
+
+                    <div class="upcoming-room">
+                        <div class="upcoming-time">
+                            <span class="time">19:00</span>
+                            <span class="day">Minggu</span>
+                        </div>
+                        <div class="upcoming-info">
+                            <h5>🌏 Diskusi: Isu Lingkungan Global</h5>
+                            <span class="upcoming-host">dengan Dr. Lina</span>
+                        </div>
+                        <button class="remind-btn" onclick="setReminder(3)"><i class="fa-regular fa-bell"></i></button>
+                    </div>
+
+                    <button class="btn-glass see-all-rooms">Lihat Semua Jadwal <i
+                            class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Discussion Analysis -->
+            <div class="discussion-analysis glass-panel" data-aos="fade-up">
+                <h4><i class="fa-solid fa-chart-pie"></i> Analisis Diskusi Minggu Ini</h4>
+                <div class="analysis-grid">
+                    <div class="analysis-item">
+                        <div class="analysis-circle green">
+                            <span>85%</span>
+                        </div>
+                        <p>Tingkat Partisipasi</p>
+                    </div>
+                    <div class="analysis-item">
+                        <div class="analysis-circle blue">
+                            <span>1.2K</span>
+                        </div>
+                        <p>Total Pesan</p>
+                    </div>
+                    <div class="analysis-item">
+                        <div class="analysis-circle yellow">
+                            <span>156</span>
+                        </div>
+                        <p>Peserta Aktif</p>
+                    </div>
+                    <div class="analysis-item">
+                        <div class="analysis-circle purple">
+                            <span>4.8</span>
+                        </div>
+                        <p>Rating Diskusi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ECO CHALLENGES -->
+    <section class="challenges-section" style="padding: 50px 0; background: rgba(0,255,128,0.02);">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 40px; text-align: center;">Tantangan Mingguan</h2>
+            <div class="challenges-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+
+                <div class="glass-panel" style="padding: 30px; position: relative; overflow: hidden;"
+                    data-aos="fade-up">
+                    <div
+                        style="position: absolute; top: 10px; right: 10px; background: var(--primary); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold;">
+                        +500 XP</div>
+                    <i class="fa-solid fa-bicycle"
+                        style="font-size: 2.5rem; color: var(--primary); margin-bottom: 20px;"></i>
+                    <h3>Tanpa Kendaraan Bermotor</h3>
+                    <p style="color: var(--text-glass); margin-bottom: 20px;">Gunakan sepeda atau jalan kaki untuk
+                        perjalanan jarak dekat selama seminggu penuh.</p>
+                    <button class="btn-glass" style="width: 100%;">Ikuti Tantangan</button>
+                </div>
+
+                <div class="glass-panel" style="padding: 30px; position: relative; overflow: hidden;" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <div
+                        style="position: absolute; top: 10px; right: 10px; background: var(--secondary); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold;">
+                        +300 XP</div>
+                    <i class="fa-solid fa-mug-hot"
+                        style="font-size: 2.5rem; color: var(--secondary); margin-bottom: 20px;"></i>
+                    <h3>Bawa Tumbler Sendiri</h3>
+                    <p style="color: var(--text-glass); margin-bottom: 20px;">Jangan gunakan gelas plastik sekali pakai
+                        saat membeli minuman di luar.</p>
+                    <button class="btn-glass" style="width: 100%;">Ikuti Tantangan</button>
+                </div>
+
+                <div class="glass-panel" style="padding: 30px; position: relative; overflow: hidden;" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <div
+                        style="position: absolute; top: 10px; right: 10px; background: var(--accent); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold;">
+                        +400 XP</div>
+                    <i class="fa-solid fa-plug"
+                        style="font-size: 2.5rem; color: var(--accent); margin-bottom: 20px;"></i>
+                    <h3>Hemat Energi</h3>
+                    <p style="color: var(--text-glass); margin-bottom: 20px;">Cabut semua colokan listrik yang tidak
+                        terpakai sebelum tidur.</p>
+                    <button class="btn-glass" style="width: 100%;">Ikuti Tantangan</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FORUM DISKUSI -->
+    <section class="forum-section">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px;">
+                <h2 style="font-size: 2.5rem;">Diskusi Terbaru</h2>
+                <button class="btn-primary" onclick="openTopicModal()">Buat Topik Baru <i
+                        class="fa-solid fa-plus"></i></button>
+            </div>
+
+            <!-- Search & Filter Area -->
+            <div class="forum-filters"
+                style="margin-bottom: 30px; display:flex; flex-wrap:wrap; gap:15px; align-items:center; justify-content: space-between;">
+                <div class="search-box glass-panel"
+                    style="padding: 10px 20px; display:flex; align-items:center; gap:10px; flex:1; max-width:400px; border-radius:50px;">
+                    <i class="fa-solid fa-search" style="color:var(--text-muted)"></i>
+                    <input type="text" id="forumSearch" placeholder="Cari diskusi..."
+                        style="background:transparent; border:none; color:white; width:100%; outline:none;"
+                        onkeyup="filterForum()">
+                </div>
+                <div class="filter-tags" style="display:flex; gap:10px; overflow-x:auto; padding-bottom:5px;">
+                    <button class="filter-tag active" onclick="filterCategory('All')">All</button>
+                    <button class="filter-tag" onclick="filterCategory('Tips & Trik')">Tips & Trik</button>
+                    <button class="filter-tag" onclick="filterCategory('Showcase')">Showcase</button>
+                    <button class="filter-tag" onclick="filterCategory('Event')">Event</button>
+                    <button class="filter-tag" onclick="filterCategory('Ask')">Ask</button>
+                    <button class="filter-tag" onclick="filterCategory('Urgent')">Urgent</button>
+                </div>
+            </div>
+
+            <div class="forum-grid" id="forumGrid">
+
+                <!-- Topic 1 -->
+                <div class="forum-card" data-aos="zoom-in">
+                    <span class="f-tag">Tips & Trik</span>
+                    <h3 class="f-title">Bagaimana cara memulai kompos di apartemen sempit?</h3>
+                    <div class="f-meta">
+                        <div class="f-user">
+                            <img src="image/user4.jpg" alt="User">
+                            <span>Clara</span>
+                        </div>
+                        <div class="f-actions">
+                            <button class="like-btn" onclick="this.classList.toggle('active')">
+                                <i class="fa-solid fa-heart"></i> <span>24</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic 2 -->
+                <div class="forum-card" data-aos="zoom-in" data-aos-delay="100">
+                    <span class="f-tag"
+                        style="color: var(--secondary); background: rgba(0,150,255,0.1); border-color: rgba(0,150,255,0.2);">Showcase</span>
+                    <h3 class="f-title">Foto hasil daur ulang botol plastik jadi pot bunga estetik!</h3>
+                    <div class="f-meta">
+                        <div class="f-user">
+                            <img src="image/user5.jpg" alt="User">
+                            <span>William</span>
+                        </div>
+                        <div class="f-actions">
+                            <button class="like-btn" onclick="this.classList.toggle('active')">
+                                <i class="fa-solid fa-heart"></i> <span>56</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic 3 -->
+                <div class="forum-card" data-aos="zoom-in" data-aos-delay="200">
+                    <span class="f-tag"
+                        style="color: var(--accent); background: rgba(255,215,0,0.1); border-color: rgba(255,215,0,0.2);">Event</span>
+                    <h3 class="f-title">Ada yang mau join bersih-bersih pantai Ancol minggu depan?</h3>
+                    <div class="f-meta">
+                        <div class="f-user">
+                            <img src="image/user6.jpg" alt="User">
+                            <span>Kevin</span>
+                        </div>
+                        <div class="f-actions">
+                            <button class="like-btn" onclick="this.classList.toggle('active')">
+                                <i class="fa-solid fa-heart"></i> <span>15</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic 4 -->
+                <div class="forum-card" data-aos="zoom-in" data-aos-delay="300">
+                    <span class="f-tag">Ask</span>
+                    <h3 class="f-title">Rekomendasi brand sikat gigi bambu yang awet?</h3>
+                    <div class="f-meta">
+                        <div class="f-user">
+                            <img src="image/user1.jpg" alt="User">
+                            <span>Andika</span>
+                        </div>
+                        <div class="f-actions">
+                            <button class="like-btn" onclick="this.classList.toggle('active')">
+                                <i class="fa-solid fa-heart"></i> <span>8</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic 5 -->
+                <div class="forum-card" data-aos="zoom-in" data-aos-delay="400">
+                    <span class="f-tag">News</span>
+                    <h3 class="f-title">Update terbaru tentang kebijakan kantong plastik di Jakarta.</h3>
+                    <div class="f-meta">
+                        <div class="f-user">
+                            <img src="image/user2.jpg" alt="User">
+                            <span>Sarah</span>
+                        </div>
+                        <div class="f-actions">
+                            <button class="like-btn" onclick="this.classList.toggle('active')">
+                                <i class="fa-solid fa-heart"></i> <span>33</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic 6 -->
+                <div class="forum-card" data-aos="zoom-in" data-aos-delay="500">
+                    <span class="f-tag"
+                        style="color: #ff0055; background: rgba(255,0,85,0.1); border-color: rgba(255,0,85,0.2);">Urgent</span>
+                    <h3 class="f-title">Laporan penumpukan sampah liar di area Tebet.</h3>
+                    <div class="f-meta">
+                        <div class="f-user">
+                            <img src="image/user3.jpg" alt="User">
+                            <span>Rangga</span>
+                        </div>
+                        <div class="f-actions">
+                            <button class="like-btn" onclick="this.classList.toggle('active')">
+                                <i class="fa-solid fa-heart"></i> <span>45</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- POLL SECTION -->
+    <section class="poll-section" style="padding: 80px 0; background: var(--glass-panel);">
+        <div class="container" data-aos="fade-up">
+            <h2 style="text-align: center; margin-bottom: 40px; font-size: 2rem;">🗳️ Polling Minggu Ini</h2>
+            <div class="glass-panel" style="max-width: 600px; margin: 0 auto; padding: 40px;">
+                <h3 style="margin-bottom: 20px;">Topik Mana yang Paling Ingin Kamu Pelajari?</h3>
+                <div class="poll-options" id="pollOptions" style="display: flex; flex-direction: column; gap: 15px;">
+                    <button class="btn-glass poll-option" id="pollOpt1" onclick="votePoll(1)"
+                        style="text-align: left; padding: 15px; position:relative; overflow:hidden;">
+                        <span class="poll-bar" id="pollBar1"
+                            style="position:absolute; top:0; left:0; height:100%; width:0%; background:rgba(0,255,128,0.2); transition:width 1s ease;"></span>
+                        <span style="position:relative; z-index:2;">A. Energi Terbarukan DIY</span>
+                        <span id="pollPct1" style="float: right; position:relative; z-index:2;">35%</span>
+                    </button>
+                    <button class="btn-glass poll-option" id="pollOpt2" onclick="votePoll(2)"
+                        style="text-align: left; padding: 15px; position:relative; overflow:hidden;">
+                        <span class="poll-bar" id="pollBar2"
+                            style="position:absolute; top:0; left:0; height:100%; width:0%; background:rgba(0,255,128,0.2); transition:width 1s ease;"></span>
+                        <span style="position:relative; z-index:2;">B. Urban Farming Expert</span>
+                        <span id="pollPct2" style="float: right; position:relative; z-index:2;">42%</span>
+                    </button>
+                    <button class="btn-glass poll-option" id="pollOpt3" onclick="votePoll(3)"
+                        style="text-align: left; padding: 15px; position:relative; overflow:hidden;">
+                        <span class="poll-bar" id="pollBar3"
+                            style="position:absolute; top:0; left:0; height:100%; width:0%; background:rgba(0,255,128,0.2); transition:width 1s ease;"></span>
+                        <span style="position:relative; z-index:2;">C. Zero Waste Cooking</span>
+                        <span id="pollPct3" style="float: right; position:relative; z-index:2;">23%</span>
+                    </button>
+                </div>
+                <p style="margin-top: 20px; color: var(--text-muted); text-align: center;">Total Vote: 1,240 Eco
+                    Warriors</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer
+        style="background: var(--bg-depth); padding: 30px; text-align: center; border-top: 1px solid var(--glass-border);">
+        <p style="color: var(--text-muted);">© 2025 EcoLearn God-Tier Edition</p>
+    </footer>
+
+    <!-- ACTIVITY REGISTRATION MODAL -->
+    <div class="activity-modal-overlay" id="activityModal">
+        <div class="activity-modal glass-panel">
+            <button class="modal-close-btn" onclick="closeActivityModal()"><i class="fa-solid fa-times"></i></button>
+            <div class="activity-modal-header">
+                <div class="activity-modal-icon" id="activityModalIcon"><i class="fa-solid fa-seedling"></i></div>
+                <h2 id="activityModalTitle">Daftar Aktivitas</h2>
+                <p id="activityModalDesc">Isi form di bawah untuk bergabung!</p>
+            </div>
+            <form id="activityForm" class="activity-form">
+                <div class="form-group">
+                    <label><i class="fa-solid fa-user"></i> Nama Lengkap</label>
+                    <input type="text" id="regName" placeholder="Masukkan nama lengkap" required maxlength="50">
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-envelope"></i> Email</label>
+                    <input type="email" id="regEmail" placeholder="email@contoh.com" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-phone"></i> No. WhatsApp</label>
+                    <input type="tel" id="regPhone" placeholder="08xxxxxxxxxx" required pattern="[0-9]{10,13}">
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-calendar"></i> Tanggal Kehadiran</label>
+                    <input type="date" id="regDate" required>
+                </div>
+                <input type="hidden" id="regActivityType">
+                <button type="submit" class="btn-primary submit-activity-btn">
+                    <i class="fa-solid fa-check"></i> Konfirmasi Pendaftaran
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ACTIVITY SUCCESS MODAL -->
+    <div class="success-modal-overlay" id="successModal">
+        <div class="success-modal glass-panel">
+            <div class="success-animation">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h2>Pendaftaran Berhasil! 🎉</h2>
+            <p id="successMessage">Detail aktivitas akan dikirim ke email Anda.</p>
+            <div class="success-details" id="successDetails"></div>
+            <button class="btn-primary" onclick="closeSuccessModal()">Tutup</button>
+        </div>
+    </div>
+
+    <!-- TRENDING ARTICLE MODAL -->
+    <div class="trending-modal-overlay" id="trendingModal">
+        <div class="trending-modal glass-panel">
+            <button class="modal-close-btn" onclick="closeTrendingModal()"><i class="fa-solid fa-times"></i></button>
+            <div class="trending-modal-header" id="trendingModalHeader">
+                <img id="trendingModalImg" src="" alt="">
+                <div class="trending-modal-overlay-text">
+                    <span class="trending-modal-tag" id="trendingModalTag">🔥 HOT</span>
+                    <h2 id="trendingModalTitle">Judul Artikel</h2>
+                    <div class="trending-modal-meta">
+                        <span><i class="fa-solid fa-clock"></i> <span id="trendingReadTime">5 min read</span></span>
+                        <span><i class="fa-solid fa-eye"></i> <span id="trendingViews">12.5K</span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="trending-modal-body">
+                <div id="trendingModalContent"></div>
+                <div class="trending-actions">
+                    <button class="btn-glass" onclick="bookmarkArticle()"><i class="fa-solid fa-bookmark"></i>
+                        Bookmark</button>
+                    <button class="btn-glass" onclick="shareArticle('twitter')"><i
+                            class="fa-brands fa-twitter"></i></button>
+                    <button class="btn-glass" onclick="shareArticle('whatsapp')"><i
+                            class="fa-brands fa-whatsapp"></i></button>
+                    <button class="btn-glass" onclick="shareArticle('copy')"><i class="fa-solid fa-link"></i> Salin
+                        Link</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CITY POPUP MODAL -->
+    <div class="city-modal-overlay" id="cityModal">
+        <div class="city-modal glass-panel">
+            <button class="modal-close-btn" onclick="closeCityModal()"><i class="fa-solid fa-times"></i></button>
+            <h2 id="cityModalTitle">🌱 Jakarta</h2>
+            <div class="city-stats">
+                <div class="city-stat">
+                    <i class="fa-solid fa-users"></i>
+                    <span class="city-stat-number" id="cityMembers">1,245</span>
+                    <span class="city-stat-label">Anggota Aktif</span>
+                </div>
+                <div class="city-stat">
+                    <i class="fa-solid fa-tree"></i>
+                    <span class="city-stat-number" id="cityTrees">89</span>
+                    <span class="city-stat-label">Pohon Ditanam</span>
+                </div>
+                <div class="city-stat">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span class="city-stat-number" id="cityEvents">12</span>
+                    <span class="city-stat-label">Event Bulan Ini</span>
+                </div>
+            </div>
+            <div class="city-recent">
+                <h4>Aktivitas Terbaru</h4>
+                <div id="cityRecentActivities"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ADD TOPIC MODAL -->
+    <div class="topic-modal-overlay" id="topicModal">
+        <div class="topic-modal glass-panel">
+            <button class="modal-close-btn" onclick="closeTopicModal()"><i class="fa-solid fa-times"></i></button>
+            <div class="topic-modal-header">
+                <h2><i class="fa-solid fa-pen-to-square"></i> Buat Topik Baru</h2>
+                <p>Mulai diskusi positif untuk lingkungan!</p>
+            </div>
+            <form id="topicForm" class="topic-form" onsubmit="handleTopicSubmit(event)">
+                <div class="super-form-group">
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-heading input-icon"></i>
+                        <input type="text" id="topicTitle" placeholder=" " required class="super-input">
+                        <label for="topicTitle" class="floating-label">Judul Diskusi</label>
+                        <div class="input-border"></div>
+                    </div>
+                </div>
+
+                <div class="super-form-group">
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-layer-group input-icon"></i>
+                        <select id="topicCategory" class="super-input super-select" required>
+                            <option value="" disabled selected></option>
+                            <option value="Tips & Trik">Tips & Trik</option>
+                            <option value="Ask">Tanya Jawab</option>
+                            <option value="Showcase">Showcase</option>
+                            <option value="Event">Event</option>
+                            <option value="News">Berita</option>
+                            <option value="Urgent">Urgent</option>
+                        </select>
+                        <label class="floating-label">Kategori</label>
+                        <div class="input-border"></div>
+                        <i class="fa-solid fa-chevron-down select-arrow"></i>
+                    </div>
+                </div>
+
+                <div class="super-form-group">
+                    <div class="input-wrapper textarea-wrapper">
+                        <i class="fa-solid fa-align-left input-icon top-align"></i>
+                        <textarea id="topicContent" placeholder=" " required rows="5" class="super-input"></textarea>
+                        <label for="topicContent" class="floating-label">Detail Diskusi</label>
+                        <div class="input-border"></div>
+                    </div>
+                </div>
+
+                <div class="topic-actions">
+                    <button type="submit" class="btn-primary publish-btn super-btn">
+                        <span>Publish Now</span>
+                        <div class="btn-glow"></div>
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MOBILE FAB (ADD TOPIC) -->
+    <button class="mobile-fab" onclick="openTopicModal()">
+        <i class="fa-solid fa-plus"></i>
+    </button>
+
+
+
+    <!-- SCRIPT -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        // Mobile Menu
+        function toggleMenu() {
+            var nav = document.getElementById("navLinks");
+            if (nav) nav.classList.toggle("active");
+        }
+
+        // ========================================
+        // COMMUNITY STATS LOGIC
+        // ========================================
+        const statsData = {
+            week: { trees: 127, recycled: 2450, members: 8942, projects: 342, energy: 15.2, co2: 4.8 },
+            month: { trees: 543, recycled: 11280, members: 9120, projects: 1250, energy: 68.5, co2: 21.3 },
+            year: { trees: 6890, recycled: 145600, members: 15400, projects: 15600, energy: 840.0, co2: 256.5 }
+        };
+
+        function showStats(period) {
+            document.querySelectorAll('.period-tab').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            const data = statsData[period];
+            animateValue("statTrees", data.trees);
+            animateValue("statRecycled", data.recycled);
+            animateValue("statMembers", data.members);
+            animateValue("statProjects", data.projects);
+            document.getElementById("statEnergy").innerHTML = data.energy + (period === 'year' ? 'M' : 'K');
+            document.getElementById("statCO2").innerHTML = data.co2;
+        }
+
+        function animateValue(id, end) {
+            const obj = document.getElementById(id);
+            if (!obj) return;
+            const start = parseInt(obj.innerHTML.replace(/,/g, '')) || 0;
+            const duration = 1000;
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerHTML = Math.floor(progress * (end - start) + start).toLocaleString();
+                if (progress < 1) window.requestAnimationFrame(step);
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // ========================================
+        // ENHANCED LIVE CHAT WITH PERSISTENCE
+        // ========================================
+        const chatMessages = document.getElementById('chatMessages');
+        let chatHistory = JSON.parse(localStorage.getItem('eco_chat_history')) || [];
+
+        function loadChatHistory() {
+            if (!chatMessages) return;
+            chatHistory.forEach(msg => appendChatMessage(msg.name, msg.text, msg.img, msg.isSelf, false));
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function handleChatEnter(e) { if (e.key === 'Enter') sendChatMessage(); }
+
+        function sendChatMessage() {
+            const input = document.getElementById('chatInput');
+            const text = input.value.trim();
+            if (!text) return;
+            const userName = localStorage.getItem('eco_user_name') || 'You';
+            addMessage(userName, text, 'image/user1.jpg', true);
+            input.value = '';
+            showTypingIndicator();
+            setTimeout(() => {
+                hideTypingIndicator();
+                const replies = ["Setuju banget! 👏", "Keren idenya 👍", "Bisa dicoba nih.", "Betul sekali! 💪", "Awesome! 🌱", "Semangat terus! 🔥", "Info bermanfaat.", "Jadi terinspirasi.", "Mantap! 🙌", "Terima kasih sudah berbagi 🙏"];
+                const names = ['Sarah', 'Rangga', 'Maya', 'Budi', 'Clara'];
+                const idx = Math.floor(Math.random() * names.length);
+                addMessage(names[idx], replies[Math.floor(Math.random() * replies.length)], `image/user${idx + 2}.jpg`);
+            }, 1500 + Math.random() * 2000);
+        }
+
+        function showTypingIndicator() {
+            if (!chatMessages) return;
+            let indicator = document.getElementById('typingIndicator');
+            if (!indicator) {
+                indicator = document.createElement('div');
+                indicator.id = 'typingIndicator';
+                indicator.className = 'typing-indicator';
+                indicator.innerHTML = '<div class="typing-dots"><span></span><span></span><span></span></div><span>Seseorang mengetik...</span>';
+                chatMessages.appendChild(indicator);
+            }
+            indicator.style.display = 'flex';
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function hideTypingIndicator() {
+            const indicator = document.getElementById('typingIndicator');
+            if (indicator) indicator.style.display = 'none';
+        }
+
+        function addMessage(name, text, img, isSelf = false) {
+            const msgData = { name, text, img, isSelf, timestamp: Date.now() };
+            chatHistory.push(msgData);
+            if (chatHistory.length > 50) chatHistory = chatHistory.slice(-50);
+            localStorage.setItem('eco_chat_history', JSON.stringify(chatHistory));
+            appendChatMessage(name, text, img, isSelf, true);
+        }
+
+        function appendChatMessage(name, text, img, isSelf, animate) {
+            if (!chatMessages) return;
+            const msgId = 'msg_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5);
+            const div = document.createElement('div');
+            div.className = `chat-message ${isSelf ? 'host' : ''} ${animate ? 'animate-in' : ''}`;
+            div.id = msgId;
+            div.innerHTML = `<img src="${img}" alt="${name}"><div class="message-content"><strong>${name}</strong><p>${text}</p><div class="message-reactions"><button class="reaction-btn" onclick="addReaction('${msgId}','👍')">👍<span>0</span></button><button class="reaction-btn" onclick="addReaction('${msgId}','❤️')">❤️<span>0</span></button><button class="reaction-btn" onclick="addReaction('${msgId}','🌱')">🌱<span>0</span></button></div></div>`;
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function addReaction(msgId, emoji) {
+            const msgEl = document.getElementById(msgId);
+            if (!msgEl) return;
+            msgEl.querySelectorAll('.reaction-btn').forEach(btn => {
+                if (btn.textContent.includes(emoji)) {
+                    const span = btn.querySelector('span');
+                    span.textContent = parseInt(span.textContent) + 1;
+                    btn.classList.add('reacted');
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', loadChatHistory);
+
+        setInterval(() => {
+            const el = document.querySelector('.room-viewers');
+            if (el) el.innerHTML = `<i class="fa-solid fa-users"></i> ${234 + Math.floor(Math.random() * 20) - 10} online`;
+        }, 5000);
+
+        // ========================================
+        // ACTIVITY REGISTRATION SYSTEM
+        // ========================================
+        const activityInfo = {
+            planting: { icon: 'fa-seedling', title: 'Tanam Pohon Bersama', desc: 'Program penanaman pohon di berbagai lokasi Indonesia.', color: '#00ff80' },
+            cleanup: { icon: 'fa-trash-can', title: 'Beach & River Cleanup', desc: 'Bersihkan pantai dan sungai dari sampah plastik.', color: '#0096ff' },
+            education: { icon: 'fa-chalkboard-teacher', title: 'Edukasi ke Sekolah', desc: 'Jadi relawan pengajar lingkungan di sekolah-sekolah.', color: '#ffd700' },
+            workshop: { icon: 'fa-recycle', title: 'Workshop Daur Ulang', desc: 'Pelajari cara mengubah sampah jadi produk bernilai.', color: '#a032ff' },
+            campaign: { icon: 'fa-share-nodes', title: 'Kampanye Digital', desc: 'Sebarkan kesadaran lingkungan melalui media sosial.', color: '#ff6400' },
+            partner: { icon: 'fa-building', title: 'Corporate Partnership', desc: 'Ajak perusahaan jadi partner program lingkungan.', color: '#ff6496' }
+        };
+
+        function joinActivity(type) {
+            const registrations = JSON.parse(localStorage.getItem('eco_registrations')) || {};
+            if (registrations[type]) { showAlreadyRegistered(type, registrations[type]); return; }
+            const info = activityInfo[type];
+            document.getElementById('activityModalIcon').innerHTML = `<i class="fa-solid ${info.icon}"></i>`;
+            document.getElementById('activityModalIcon').style.cssText = `background:${info.color}20;color:${info.color}`;
+            document.getElementById('activityModalTitle').textContent = info.title;
+            document.getElementById('activityModalDesc').textContent = info.desc;
+            document.getElementById('regActivityType').value = type;
+            const tomorrow = new Date(); tomorrow.setDate(tomorrow.getDate() + 1);
+            document.getElementById('regDate').min = tomorrow.toISOString().split('T')[0];
+            document.getElementById('activityModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeActivityModal() { document.getElementById('activityModal').classList.remove('active'); document.body.style.overflow = 'auto'; }
+
+        function showAlreadyRegistered(type, data) {
+            const info = activityInfo[type];
+            document.getElementById('successMessage').textContent = `Kamu sudah terdaftar untuk ${info.title}!`;
+            document.getElementById('successDetails').innerHTML = `<p><strong>Nama:</strong> ${data.name}</p><p><strong>Tanggal:</strong> ${new Date(data.date).toLocaleDateString('id-ID', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</p><p class="already-note"><i class="fa-solid fa-info-circle"></i> Hubungi kami untuk mengubah jadwal.</p>`;
+            document.getElementById('successModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        document.getElementById('activityForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const type = document.getElementById('regActivityType').value;
+            const data = { name: document.getElementById('regName').value, email: document.getElementById('regEmail').value, phone: document.getElementById('regPhone').value, date: document.getElementById('regDate').value, registeredAt: new Date().toISOString() };
+            const registrations = JSON.parse(localStorage.getItem('eco_registrations')) || {};
+            registrations[type] = data;
+            localStorage.setItem('eco_registrations', JSON.stringify(registrations));
+            localStorage.setItem('eco_user_name', data.name.split(' ')[0]);
+            closeActivityModal();
+            const info = activityInfo[type];
+            document.getElementById('successMessage').textContent = `Detail ${info.title} akan dikirim ke ${data.email}`;
+            document.getElementById('successDetails').innerHTML = `<p><strong>Nama:</strong> ${data.name}</p><p><strong>Tanggal:</strong> ${new Date(data.date).toLocaleDateString('id-ID', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</p><p><strong>WhatsApp:</strong> ${data.phone}</p>`;
+            document.getElementById('successModal').classList.add('active');
+            launchConfetti();
+            this.reset();
+            updateActivityButton(type);
+        });
+
+        function closeSuccessModal() { document.getElementById('successModal').classList.remove('active'); document.body.style.overflow = 'auto'; }
+
+        function updateActivityButton(type) {
+            document.querySelectorAll('.activity-join').forEach(btn => {
+                if (btn.getAttribute('onclick')?.includes(type)) {
+                    btn.innerHTML = '<i class="fa-solid fa-check"></i> Terdaftar';
+                    btn.classList.add('registered');
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const registrations = JSON.parse(localStorage.getItem('eco_registrations')) || {};
+            Object.keys(registrations).forEach(type => updateActivityButton(type));
+        });
+
+        // ========================================
+        // TRENDING TOPICS SYSTEM
+        // ========================================
+        const trendingArticles = [
+            { id: 0, tag: '🔥 HOT', title: 'Teknologi Ramah Lingkungan 2025', img: 'image/green-tech.jpg', views: '12.5K', readTime: '7 min', content: '<h3>Inovasi Teknologi Hijau</h3><p>Tahun 2025 menjadi tonggak penting dalam perkembangan teknologi ramah lingkungan. Panel surya efisiensi 40%, baterai solid-state, dan AI untuk pengelolaan limbah.</p><h4>🌱 Highlight</h4><ul><li><strong>Solar Paint:</strong> Ubah dinding jadi panel surya</li><li><strong>Ocean Cleanup AI:</strong> Robot pembersih mikroplastik</li><li><strong>Vertical Farms:</strong> Pertanian 95% hemat air</li></ul><blockquote>"Investasi teknologi hijau adalah keharusan untuk masa depan."</blockquote>' },
+            { id: 1, tag: '#2', title: 'Tips Kompos di Rumah', img: 'image/compost.jpg', views: '8.2K', readTime: '5 min', content: '<h3>Panduan Membuat Kompos</h3><p>Kurangi sampah organik hingga 60% dengan kompos rumahan.</p><h4>📦 Bahan</h4><ul><li>Wadah komposter</li><li>Sampah coklat & hijau</li><li>Tanah starter</li></ul><h4>⏱️ Langkah</h4><ol><li>Siapkan wadah berlubang</li><li>Lapisi sampah bergantian</li><li>Aduk tiap minggu</li><li>Panen 2-3 bulan!</li></ol>' },
+            { id: 2, tag: '#3', title: 'Bisnis dari Sampah Plastik', img: 'image/sampah-daur.jpg', views: '6.8K', readTime: '6 min', content: '<h3>Sampah Plastik Jadi Cuan 💰</h3><p>Indonesia hasilkan 6.8 juta ton sampah plastik/tahun. Potensi bisnis Rp 15 Triliun!</p><h4>🏭 Ide Bisnis</h4><ul><li>Ecobrick untuk bangunan</li><li>Paving block plastik</li><li>Fashion upcycle</li><li>Furniture daur ulang</li></ul>' },
+            { id: 3, tag: '#4', title: 'Urban Farming Pemula', img: 'image/vertical-garden.jpg', views: '5.4K', readTime: '4 min', content: '<h3>Berkebun di Lahan Sempit!</h3><p>Tinggal di apartemen? Bisa berkebun!</p><h4>🌿 Tanaman Mudah</h4><ul><li>Kangkung - 3 minggu</li><li>Bayam - tumbuh cepat</li><li>Cabai rawit</li><li>Herbs: basil, mint</li></ul><h4>🏠 Teknik</h4><ol><li>Vertical Garden</li><li>Hidroponik</li><li>Container Garden</li></ol>' }
+        ];
+
+        let bookmarks = JSON.parse(localStorage.getItem('eco_bookmarks')) || [];
+
+        function openTrending(id) {
+            const article = trendingArticles[id];
+            if (!article) return;
+            document.getElementById('trendingModalImg').src = article.img;
+            document.getElementById('trendingModalTag').textContent = article.tag;
+            document.getElementById('trendingModalTitle').textContent = article.title;
+            document.getElementById('trendingReadTime').textContent = article.readTime;
+            document.getElementById('trendingViews').textContent = article.views;
+            document.getElementById('trendingModalContent').innerHTML = article.content;
+            const bookmarkBtn = document.querySelector('.trending-actions .btn-glass:first-child');
+            bookmarkBtn.innerHTML = bookmarks.includes(id) ? '<i class="fa-solid fa-bookmark"></i> Tersimpan' : '<i class="fa-regular fa-bookmark"></i> Bookmark';
+            bookmarkBtn.classList.toggle('bookmarked', bookmarks.includes(id));
+            document.getElementById('trendingModal').classList.add('active');
+            document.getElementById('trendingModal').dataset.articleId = id;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeTrendingModal() { document.getElementById('trendingModal').classList.remove('active'); document.body.style.overflow = 'auto'; }
+
+        function bookmarkArticle() {
+            const articleId = parseInt(document.getElementById('trendingModal').dataset.articleId);
+            const btn = document.querySelector('.trending-actions .btn-glass:first-child');
+            if (bookmarks.includes(articleId)) {
+                bookmarks = bookmarks.filter(id => id !== articleId);
+                btn.innerHTML = '<i class="fa-regular fa-bookmark"></i> Bookmark';
+                btn.classList.remove('bookmarked');
+                showNotification('Bookmark dihapus');
+            } else {
+                bookmarks.push(articleId);
+                btn.innerHTML = '<i class="fa-solid fa-bookmark"></i> Tersimpan';
+                btn.classList.add('bookmarked');
+                showNotification('Artikel disimpan! 📌');
+            }
+            localStorage.setItem('eco_bookmarks', JSON.stringify(bookmarks));
+        }
+
+        function shareArticle(platform) {
+            const title = document.getElementById('trendingModalTitle').textContent;
+            const url = window.location.href;
+            const text = `Baca: ${title} 🌱`;
+            if (platform === 'twitter') window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+            else if (platform === 'whatsapp') window.open(`https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`, '_blank');
+            else if (platform === 'copy') { navigator.clipboard.writeText(url); showNotification('Link disalin! 📋'); }
+        }
+
+        // ========================================
+        // CITY MAP INTERACTION
+        // ========================================
+        const cityData = {
+            'Jakarta': { emoji: '🌱', members: 1245, trees: 89, events: 12, activities: ['Cleanup Kali Ciliwung', 'Workshop Kompos', 'Tanam Pohon Monas'] },
+            'Surabaya': { emoji: '♻️', members: 892, trees: 67, events: 8, activities: ['Beach Cleanup Kenjeran', 'Edukasi SD', 'Car Free Day'] },
+            'Bandung': { emoji: '🌿', members: 1034, trees: 112, events: 15, activities: ['Urban Farming Workshop', 'Zero Waste Market', 'Hiking Cleanup'] },
+            'Yogyakarta': { emoji: '🌳', members: 756, trees: 95, events: 10, activities: ['Kampanye Plastik', 'Tanam Mangrove', 'Green Festival'] }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.map-pin').forEach(pin => {
+                pin.style.cursor = 'pointer';
+                pin.addEventListener('click', () => {
+                    const cityName = pin.querySelector('span').textContent.replace(/[^\w\s]/g, '').trim();
+                    openCityModal(cityName);
+                });
+            });
+        });
+
+        function openCityModal(cityName) {
+            const data = cityData[cityName];
+            if (!data) return;
+            document.getElementById('cityModalTitle').textContent = `${data.emoji} ${cityName}`;
+            document.getElementById('cityMembers').textContent = data.members.toLocaleString();
+            document.getElementById('cityTrees').textContent = data.trees;
+            document.getElementById('cityEvents').textContent = data.events;
+            document.getElementById('cityRecentActivities').innerHTML = data.activities.map(act => `<div class="city-activity-item"><i class="fa-solid fa-check-circle"></i><span>${act}</span></div>`).join('');
+            document.getElementById('cityModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCityModal() { document.getElementById('cityModal').classList.remove('active'); document.body.style.overflow = 'auto'; }
+
+        // ========================================
+        // LIVE ROOM FUNCTIONS
+        // ========================================
+        function joinLiveRoom() {
+            const userName = localStorage.getItem('eco_user_name') || prompt('Masukkan nama kamu:');
+            if (!userName) return;
+            localStorage.setItem('eco_user_name', userName);
+            showNotification(`🎧 Selamat datang, ${userName}! Menghubungkan...`);
+            setTimeout(() => {
+                const el = document.querySelector('.room-viewers');
+                if (el) el.innerHTML = `<i class="fa-solid fa-users"></i> ${parseInt(el.textContent.match(/\d+/)?.[0] || 234) + 1} online`;
+                showNotification('✅ Terhubung! Mulai berdiskusi.');
+            }, 1500);
+        }
+
+        const reminders = JSON.parse(localStorage.getItem('eco_reminders')) || {};
+
+        function toggleReminder() {
+            const btn = event.currentTarget;
+            btn.classList.toggle('active');
+            if (btn.classList.contains('active')) {
+                btn.innerHTML = '<i class="fa-solid fa-bell"></i> Reminder On';
+                btn.style.cssText = 'background:rgba(0,255,128,0.2);border-color:#00ff80';
+                showNotification('🔔 Reminder aktif!');
+            } else {
+                btn.innerHTML = '<i class="fa-solid fa-bell"></i> Remind Me';
+                btn.style.cssText = '';
+            }
+        }
+
+        function setReminder(id) {
+            if (reminders[id]) { showNotification('Reminder sudah diset! ✅'); return; }
+            reminders[id] = true;
+            localStorage.setItem('eco_reminders', JSON.stringify(reminders));
+            const btn = event.currentTarget;
+            btn.innerHTML = '<i class="fa-solid fa-bell"></i>';
+            btn.style.cssText = 'background:rgba(0,255,128,0.2);border-color:#00ff80;color:#00ff80';
+            showNotification('✅ Reminder diset!');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            Object.keys(reminders).forEach(id => {
+                const btn = document.querySelector(`.remind-btn[onclick="setReminder(${id})"]`);
+                if (btn) { btn.innerHTML = '<i class="fa-solid fa-bell"></i>'; btn.style.cssText = 'background:rgba(0,255,128,0.2);border-color:#00ff80;color:#00ff80'; }
+            });
+        });
+
+        // ========================================
+        // CHALLENGE ENHANCEMENT
+        // ========================================
+        const challengeProgress = JSON.parse(localStorage.getItem('eco_challenge_progress')) || {};
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.challenges-section .glass-panel');
+            const types = ['biking', 'tumbler', 'energy'];
+            cards.forEach((card, i) => {
+                const type = types[i];
+                const btn = card.querySelector('.btn-glass');
+                if (!btn) return;
+                const progress = challengeProgress[type] || 0;
+                const bar = document.createElement('div');
+                bar.className = 'challenge-progress';
+                bar.innerHTML = `<div class="challenge-progress-bar"><div class="challenge-progress-fill" id="progress_${type}" style="width:${progress}%"></div></div><span class="challenge-progress-text">${progress}% selesai</span>`;
+                btn.before(bar);
+                if (progress >= 100) { btn.innerHTML = '<i class="fa-solid fa-trophy"></i> Selesai!'; btn.classList.add('completed'); btn.disabled = true; }
+                else if (progress > 0) btn.innerHTML = '<i class="fa-solid fa-play"></i> Lanjutkan';
+                btn.onclick = () => startChallenge(type, btn);
+            });
+        });
+
+        function startChallenge(type, btn) {
+            const userName = localStorage.getItem('eco_user_name') || prompt('Masukkan nama:');
+            if (!userName) return;
+            localStorage.setItem('eco_user_name', userName);
+            let progress = challengeProgress[type] || 0;
+            if (progress >= 100) return;
+            progress = Math.min(progress + 20, 100);
+            challengeProgress[type] = progress;
+            localStorage.setItem('eco_challenge_progress', JSON.stringify(challengeProgress));
+            document.getElementById(`progress_${type}`).style.width = `${progress}%`;
+            btn.previousElementSibling.querySelector('.challenge-progress-text').textContent = `${progress}% selesai`;
+            if (progress >= 100) {
+                btn.innerHTML = '<i class="fa-solid fa-trophy"></i> Selesai!';
+                btn.classList.add('completed');
+                btn.disabled = true;
+                launchConfetti();
+                const xpGain = type === 'biking' ? 500 : type === 'tumbler' ? 300 : 400;
+                let xp = parseInt(localStorage.getItem('eco_xp')) || 0;
+                localStorage.setItem('eco_xp', xp + xpGain);
+                showNotification(`🏆 ${userName}! Challenge selesai! +${xpGain} XP!`);
+            } else {
+                btn.innerHTML = '<i class="fa-solid fa-play"></i> Lanjutkan';
+                showNotification(`💪 Progress: ${progress}%!`);
+            }
+        }
+
+        // ========================================
+        // CONFETTI & NOTIFICATIONS
+        // ========================================
+        function launchConfetti() {
+            const colors = ['#00ff80', '#ffd700', '#ff6496', '#0096ff', '#a032ff'];
+            for (let i = 0; i < 80; i++) {
+                const c = document.createElement('div');
+                c.className = 'confetti';
+                c.style.cssText = `left:${Math.random() * 100}vw;background:${colors[Math.floor(Math.random() * colors.length)]};animation-delay:${Math.random() * 2}s;animation-duration:${Math.random() * 2 + 2}s`;
+                document.body.appendChild(c);
+                setTimeout(() => c.remove(), 4000);
+            }
+        }
+
+        function showNotification(message) {
+            document.querySelectorAll('.eco-notification').forEach(n => n.remove());
+            const notif = document.createElement('div');
+            notif.className = 'eco-notification';
+            notif.innerHTML = `<p>${message}</p>`;
+            document.body.appendChild(notif);
+            setTimeout(() => notif.classList.add('show'), 100);
+            setTimeout(() => { notif.classList.remove('show'); setTimeout(() => notif.remove(), 500); }, 3000);
+        }
+
+        // Close modals
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeActivityModal(); closeSuccessModal(); closeTrendingModal(); closeCityModal(); } });
+        document.querySelectorAll('.activity-modal-overlay, .success-modal-overlay, .trending-modal-overlay, .city-modal-overlay').forEach(o => o.addEventListener('click', e => { if (e.target === o) { o.classList.remove('active'); document.body.style.overflow = 'auto'; } }));
+    </script>
+</body>
+
+</html>

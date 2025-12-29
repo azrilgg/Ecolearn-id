@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoLearn Quiz - Test Your Knowledge</title>
+
+    <!-- FONTS & ICONS -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&family=Space+Grotesk:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="quiz.css">
+</head>
+
+<body>
+
+    <!-- UNIQUE QUIZ PRELOADER -->
+    <div id="u-preloader" class="u-preloader-quiz">
+        <div class="quiz-loader">
+            <div class="brain-circuit">
+                <i class="fa-solid fa-brain"></i>
+            </div>
+            <div class="puzzle-piece p1"></div>
+            <div class="puzzle-piece p2"></div>
+            <div class="puzzle-piece p3"></div>
+        </div>
+        <div class="loader-text">Loading Challenges...</div>
+    </div>
+
+    <script>
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('u-preloader');
+            setTimeout(() => {
+                preloader.classList.add('fade-out');
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 600);
+            }, 1200);
+        });
+    </script>
+
+    <!-- NAV -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo"><i class="fa-solid fa-leaf"></i> EcoLearn</div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Beranda</a>
+                <a href="belajar.html">Belajar</a>
+                <a href="komunitas.html">Komunitas</a>
+                <a href="quiz.html" class="active">Quiz</a>
+                <a href="kontak.html">Kontak</a>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- MAIN QUIZ SECTION -->
+    <section class="ultra-quiz-section">
+        <div class="uqz-wrapper">
+
+            <!-- 1. INTRO VIEW -->
+            <div id="quizIntro">
+                <i class="fa-solid fa-brain uqz-icon"></i>
+                <h1 class="uqz-title">Eco <span class="text-gradient">Challenge</span></h1>
+                <p style="color: var(--text-glass); font-size: 1.1rem; margin-bottom: 20px;">
+                    Uji pengetahuanmu tentang lingkungan dan buktikan bahwa kamu adalah Eco Warrior sejati!
+                </p>
+
+                <!-- AVATAR UPLOAD SECTION -->
+                <div class="uqz-avatar-section">
+                    <div class="avatar-upload-wrapper" onclick="document.getElementById('avatarInput').click()">
+                        <img id="avatarPreview"
+                            src="https://ui-avatars.com/api/?name=Eco&background=00ff80&color=fff&size=120"
+                            alt="Avatar">
+                        <div class="avatar-overlay">
+                            <i class="fa-solid fa-camera"></i>
+                            <span>Upload Foto</span>
+                        </div>
+                    </div>
+                    <input type="file" id="avatarInput" accept="image/*" style="display: none;">
+                    <p class="avatar-hint">Klik untuk upload foto profilmu!</p>
+                </div>
+
+                <div class="uqz-input-wrapper">
+                    <input type="text" id="quizName" class="uqz-input" placeholder="Masukkan Nama Kamu..."
+                        autocomplete="off">
+                </div>
+
+                <!-- SOUND TOGGLE -->
+                <div class="sound-toggle-wrapper">
+                    <button class="sound-toggle-btn" id="soundToggle">
+                        <i class="fa-solid fa-volume-high"></i>
+                        <span>Sound ON</span>
+                    </button>
+                </div>
+
+                <!-- GAME MODE SELECTOR -->
+                <div class="uqz-game-modes">
+                    <h3 style="color: var(--text-glass); margin-bottom: 15px; font-size: 1rem;">Pilih Mode Permainan:
+                    </h3>
+                    <div class="game-mode-tabs">
+                        <button class="game-mode-tab active" data-mode="classic">
+                            <i class="fa-solid fa-brain"></i>
+                            <span>Classic Quiz</span>
+                            <small>10 soal pilihan ganda</small>
+                        </button>
+                        <button class="game-mode-tab" data-mode="truefalse">
+                            <i class="fa-solid fa-check-double"></i>
+                            <span>True/False</span>
+                            <small>Benar atau salah?</small>
+                        </button>
+                        <button class="game-mode-tab" data-mode="speed">
+                            <i class="fa-solid fa-bolt"></i>
+                            <span>Speed Round</span>
+                            <small>Jawab cepat 30 detik!</small>
+                        </button>
+                    </div>
+
+                    <!-- DAILY CHALLENGE CARD -->
+                    <div class="daily-challenge-card"
+                        style="margin-top: 30px; background: rgba(255, 215, 0, 0.1); border: 1px solid #ffd700; padding: 20px; border-radius: 20px; display: flex; align-items: center; gap: 15px;">
+                        <div
+                            style="background: #ffd700; color: #000; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                        <div style="text-align: left; flex: 1;">
+                            <h4 style="color: #ffd700; margin-bottom: 5px;">Tantangan Harian</h4>
+                            <p style="color: var(--text-glass); font-size: 0.9rem;">Menang 3x berturut-turut di mode
+                                True/False!</p>
+                        </div>
+                        <div
+                            style="background: rgba(0,0,0,0.3); padding: 5px 15px; border-radius: 15px; color: #ffd700; font-weight: bold;">
+                            +500 XP
+                        </div>
+                    </div>
+                </div>
+
+                <div class="uqz-levels">
+                    <!-- Easy -->
+                    <div class="uqz-level-card" data-level="easy">
+                        <div class="level-info">
+                            <h3>Level Easy</h3>
+                            <p>Pemula: Dasar-dasar 3R dan Polusi</p>
+                        </div>
+                        <i class="fa-solid fa-seedling" style="color: var(--primary); font-size: 1.5rem;"></i>
+                    </div>
+
+                    <!-- Medium -->
+                    <div class="uqz-level-card" data-level="medium">
+                        <div class="level-info">
+                            <h3>Level Medium</h3>
+                            <p>Menengah: Energi & Perubahan Iklim</p>
+                        </div>
+                        <i class="fa-solid fa-tree" style="color: var(--secondary); font-size: 1.5rem;"></i>
+                    </div>
+
+                    <!-- Hard -->
+                    <div class="uqz-level-card" data-level="hard">
+                        <div class="level-info">
+                            <h3>Level Hard</h3>
+                            <p>Ahli: Regulasi Global & Isu Kompleks</p>
+                        </div>
+                        <i class="fa-solid fa-globe" style="color: var(--accent); font-size: 1.5rem;"></i>
+                    </div>
+                </div>
+
+                <button class="uqz-start-btn">Start Mission</button>
+            </div>
+
+            <!-- 2. PLAY VIEW -->
+            <div id="quizPlay" class="uqz-hidden">
+                <div class="uqz-play-header">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="uqzProgressFill"></div>
+                    </div>
+                    <div class="question-count">
+                        <span id="qCurrent">1</span> / <span id="qTotal">10</span>
+                    </div>
+                </div>
+
+                <h2 class="question-text" id="questionText">Loading Question...</h2>
+
+                <div class="options-grid">
+                    <!-- Buttons injected by JS -->
+                </div>
+            </div>
+
+            <!-- 3. RESULT VIEW -->
+            <div id="quizResult" class="uqz-hidden">
+                <!-- User Avatar Display -->
+                <div class="result-avatar-wrapper">
+                    <img id="resultAvatar"
+                        src="https://ui-avatars.com/api/?name=Eco&background=00ff80&color=fff&size=120"
+                        alt="Your Avatar">
+                    <div class="result-avatar-glow"></div>
+                </div>
+
+                <div class="score-circle">
+                    <span class="score-num" id="finalScore">100</span>
+                    <span class="score-label">Score</span>
+                </div>
+
+                <h2 style="font-size: 2.5rem; margin-bottom: 10px;" id="resultMsg">Excellent!</h2>
+                <p style="color: var(--text-glass); margin-bottom: 30px;">
+                    Terima kasih telah bermain. Pengetahuanmu adalah senjata terbaik untuk menyelamatkan bumi.
+                </p>
+
+                <!-- MINI LEADERBOARD -->
+                <div class="mini-leaderboard">
+                    <h4><i class="fa-solid fa-trophy"></i> Top Eco Warriors</h4>
+                    <div class="mini-lb-list" id="miniLeaderboard">
+                        <!-- Populated by JS -->
+                    </div>
+                    <a href="komunitas.html" class="view-all-lb">Lihat Semua di Komunitas <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
+                    <button onclick="location.reload()" class="btn-glass">Main Lagi</button>
+                    <a href="komunitas.html" class="btn-primary">Lihat Komunitas</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer
+        style="background: var(--bg-depth); padding: 30px; text-align: center; border-top: 1px solid var(--glass-border);">
+        <p style="color: var(--text-muted);">© 2025 EcoLearn God-Tier Edition</p>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script src="script.js"></script>
+    </script>
+</body>
+
+</html>

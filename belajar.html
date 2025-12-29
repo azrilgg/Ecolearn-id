@@ -1,0 +1,2378 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoLearn - Belajar Lingkungan</title>
+    <!-- GOOGLE FONT POPPINS & OUTFIT/SPACE GROTESK -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&family=Space+Grotesk:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <!-- STYLE -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="belajar.css">
+</head>
+
+<body>
+
+    <!-- UNIQUE LEARNING PRELOADER -->
+    <div id="u-preloader" class="u-preloader-nature">
+        <div class="nature-loader">
+            <div class="book-spine"></div>
+            <div class="book-page"></div>
+            <div class="book-page"></div>
+            <div class="book-page"></div>
+            <div class="growing-leaf">
+                <i class="fa-solid fa-leaf"></i>
+            </div>
+        </div>
+        <div class="loader-text">Loading Knowledge...</div>
+    </div>
+
+
+    <script>
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('u-preloader');
+            setTimeout(() => {
+                preloader.classList.add('fade-out');
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 600);
+            }, 1200);
+        });
+    </script>
+
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fa-solid fa-leaf"></i> EcoLearn
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Beranda</a>
+                <a href="belajar.html" class="active">Belajar</a>
+                <a href="komunitas.html">Komunitas</a>
+                <a href="quiz.html">Quiz</a>
+                <a href="kontak.html">Kontak</a>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+    <!-- HERO INTRO -->
+    <header class="ultra-learn-section">
+        <!-- Decorative Orbs -->
+        <div class="hero-orb"
+            style="position:absolute; top:10%; left:10%; width:100px; height:100px; background:var(--primary); filter:blur(80px); opacity:0.4; animation:float 6s infinite;">
+        </div>
+        <div class="hero-orb"
+            style="position:absolute; bottom:20%; right:10%; width:150px; height:150px; background:var(--secondary); filter:blur(100px); opacity:0.3; animation:float 8s infinite reverse;">
+        </div>
+
+        <div class="ultra-hero-container" data-aos="fade-up">
+
+            <h1 class="ultra-hero-title">
+                Mulai Belajar di <span class="highlight">EcoLearn</span>
+            </h1>
+
+            <p class="ultra-hero-subtitle">
+                Dapatkan pembelajaran terstruktur mengenai pengelolaan sampah, mulai dari dasar hingga praktik lanjutan,
+                dengan pendekatan modern yang relevan dan mudah dipraktikkan.
+            </p>
+
+            <div class="ultra-hero-buttons">
+                <a href="#intro" class="btn-ultra-primary">Get Started</a>
+                <a href="#materi" class="btn-ultra-outline">Learn More</a>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- INTRO SECTION -->
+    <section class="intro-section sub-intro" id="intro">
+        <div class="container">
+            <video class="intro-bg-video" autoplay muted loop playsinline>
+                <source src="video/environment.mp4" type="video/mp4">
+            </video>
+            <div class="intro-text hover-lift" data-aos="fade-right">
+                <h2>Yuk Kenalan dengan Ilmu Lingkungan!</h2>
+                <p>
+                    Belajar lingkungan itu penting untuk masa depan bumi. Di halaman ini, kamu bisa menemukan berbagai
+                    materi menarik
+                    seputar pengelolaan sampah, daur ulang, polusi, dan cara menjaga bumi.
+                    Semua materi disajikan dalam bentuk modern, visual, dan mudah dipahami.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MOBILE VIDEO SHOWCASE SECTION -->
+    <section class="mobile-video-section" data-aos="fade-up">
+        <div class="container">
+            <div class="mobile-video-wrapper">
+                <div class="video-header">
+                    <i class="fa-solid fa-play-circle"></i>
+                    <h3>Belajar Melalui Video</h3>
+                </div>
+                <p class="video-description">Tonton video edukatif tentang lingkungan dan cara melestarikannya.</p>
+                <div class="video-container">
+                    <video class="mobile-video-player" controls playsinline muted poster="image/green-tech.jpg">
+                        <source src="video/environment.mp4" type="video/mp4">
+                        Browser kamu tidak mendukung video.
+                    </video>
+                </div>
+                <div class="video-cards">
+                    <div class="video-card glass-panel hover-lift" onclick="playVideo('environment')">
+                        <i class="fa-solid fa-leaf"></i>
+                        <span>Lingkungan Hidup</span>
+                    </div>
+                    <div class="video-card glass-panel hover-lift" onclick="playVideo('comunity')">
+                        <i class="fa-solid fa-users"></i>
+                        <span>Komunitas Hijau</span>
+                    </div>
+                    <div class="video-card glass-panel hover-lift" onclick="playVideo('quiz')">
+                        <i class="fa-solid fa-gamepad"></i>
+                        <span>Quiz Interaktif</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADVANCE ECO SECTION -->
+    <section class="eco-advance">
+        <div class="container">
+
+            <h2 data-aos="fade-up">Bagaimana Teknologi Membantu Menyelamatkan Bumi?</h2>
+            <p class="eco-adv-desc" data-aos="fade-up" data-aos-delay="100">
+                Teknologi modern memainkan peran besar dalam menjaga keberlanjutan lingkungan.
+                Mulai dari pertanian cerdas hingga sistem pemantauan bumi berbasis satelit,
+                inovasi hijau membantu melindungi masa depan planet kita.
+            </p>
+
+            <div class="eco-adv-grid">
+                <!-- CARD 1 -->
+                <div class="eco-adv-card hover-lift" data-aos="zoom-in">
+                    <img src="image/farm.jpg" class="eco-adv-photo">
+                    <i class="fa-solid fa-seedling eco-adv-icon"></i>
+                    <h3>Pertanian Cerdas</h3>
+                    <p>Drone, sensor tanah, dan IoT membantu memantau kelembapan, nutrisi, dan cuaca real-time. Hasil
+                        panen meningkat.</p>
+                </div>
+                <!-- CARD 2 -->
+                <div class="eco-adv-card hover-lift" data-aos="zoom-in" data-aos-delay="150">
+                    <img src="image/solar.jpg" class="eco-adv-photo">
+                    <i class="fa-solid fa-lightbulb eco-adv-icon"></i>
+                    <h3>Energi Terbarukan</h3>
+                    <p>Panel surya generasi terbaru menyerap energi bahkan saat mendung. Teknologi baterai lebih stabil.
+                    </p>
+                </div>
+                <!-- CARD 3 -->
+                <div class="eco-adv-card hover-lift" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="image/recycle-ai.jpg" class="eco-adv-photo">
+                    <i class="fa-solid fa-recycle eco-adv-icon"></i>
+                    <h3>Daur Ulang AI</h3>
+                    <p>Kamera AI mengenali jenis sampah otomatis dengan akurasi tinggi. Pemilahan 3x lebih cepat.</p>
+                </div>
+                <!-- CARD 4 -->
+                <div class="eco-adv-card hover-lift" data-aos="zoom-in" data-aos-delay="450">
+                    <img src="image/drone.jpg" class="eco-adv-photo">
+                    <i class="fa-solid fa-earth-asia eco-adv-icon"></i>
+                    <h3>Drone Hutan</h3>
+                    <p>Drone termal mendeteksi titik api sejak awal, mencegah kebakaran besar dan menyelamatkan hutan.
+                    </p>
+                </div>
+                <!-- CARD 5 -->
+                <div class="eco-adv-card hover-lift" data-aos="zoom-in" data-aos-delay="600">
+                    <img src="image/water.jpg" class="eco-adv-photo">
+                    <i class="fa-solid fa-water eco-adv-icon"></i>
+                    <h3>Air Digital</h3>
+                    <p>Smart-meter mendeteksi kebocoran otomatis. Filtrasi modern memurnikan air lebih bersih.</p>
+                </div>
+                <!-- CARD 6 -->
+                <div class="eco-adv-card hover-lift" data-aos="zoom-in" data-aos-delay="750">
+                    <img src="image/carbon.jpg" class="eco-adv-photo">
+                    <i class="fa-solid fa-cloud eco-adv-icon"></i>
+                    <h3>AI Emisi</h3>
+                    <p>AI memetakan emisi karbon kota real-time, membantu kebijakan ramah lingkungan akurat.</p>
+                </div>
+                <!-- CARD 7 -->
+                <div class="eco-adv-card hover-lift" data-aos="zoom-in" data-aos-delay="900">
+                    <img src="image/smartcity.jpg" class="eco-adv-photo">
+                    <i class="fa-solid fa-city eco-adv-icon"></i>
+                    <h3>Smart City</h3>
+                    <p>Lampu jalan otomatis hemat energi, sensor udara memantau polusi, transportasi efisien.</p>
+                </div>
+                <!-- CARD 8 -->
+                <div class="eco-adv-card hover-lift" data-aos="zoom-in" data-aos-delay="1050">
+                    <img src="image/oceean.jpg" class="eco-adv-photo">
+                    <i class="fa-solid fa-water-ladder eco-adv-icon"></i>
+                    <h3>Robot Laut</h3>
+                    <p>Robot otomatis mengumpulkan mikroplastik di permukaan laut tanpa mengganggu biota.</p>
+                </div>
+
+            </div>
+
+            <!-- FEATURE IMAGE -->
+            <div class="eco-adv-large hover-lift" data-aos="fade-up" data-aos-delay="200">
+                <img src="image/green-tech.jpg" alt="Eco Technology">
+                <div class="eco-adv-large-text">
+                    <h3>Inovasi Hijau Mengubah Masa Depan</h3>
+                    <p>Dunia sedang memasuki revolusi hijau dengan teknologi bersih. AI, robotika, dan energi terbarukan
+                        menciptakan masa depan yang sehat.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="learn-facts">
+        <div class="facts-container">
+            <div class="facts-header" data-aos="fade-up">
+                <span class="facts-badge">✨ Fun Facts</span>
+                <h2>Fakta <span>Menarik</span> Seputar Sampah</h2>
+                <p>Ketahui beberapa fakta penting tentang sampah dan dampaknya terhadap lingkungan.</p>
+            </div>
+
+            <!-- Grid -->
+            <div class="facts-grid">
+                <div class="facts-card soft-green hover-lift" data-aos="zoom-in">
+                    <div class="facts-icon"><i class="fa-solid fa-trash"></i></div>
+                    <h3>64 Juta Ton</h3>
+                    <p>Produksi Sampah Indonesia per tahun.</p>
+                </div>
+                <div class="facts-card soft-blue hover-lift" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="facts-icon"><i class="fa-solid fa-water"></i></div>
+                    <h3>Peringkat #2</h3>
+                    <p>Indonesia penyumbang sampah plastik ke laut terbesar ke-2.</p>
+                </div>
+                <div class="facts-card soft-yellow hover-lift" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="facts-icon"><i class="fa-solid fa-hourglass-half"></i></div>
+                    <h3>500 Tahun</h3>
+                    <p>Plastik butuh ratusan tahun urai, kertas 2-5 bulan.</p>
+                </div>
+                <div class="facts-card soft-mint hover-lift" data-aos="zoom-in" data-aos-delay="450">
+                    <div class="facts-icon"><i class="fa-solid fa-file-lines"></i></div>
+                    <h3>17 Pohon</h3>
+                    <p>Daur ulang 1 ton kertas menyelamatkan 17 pohon.</p>
+                </div>
+                <div class="facts-card soft-purple hover-lift" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="facts-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <h3>Energi Biogas</h3>
+                    <p>Sampah organik dapat diolah menjadi listrik ramah lingkungan.</p>
+                </div>
+                <div class="facts-card soft-pink hover-lift" data-aos="zoom-in" data-aos-delay="750">
+                    <div class="facts-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+                    <h3>700 Kantong</h3>
+                    <p>Rata-rata orang pakai 2 kantong plastik sehari.</p>
+                </div>
+            </div>
+
+            <div class="facts-highlight hover-lift" data-aos="fade-up">
+                <div class="facts-highlight-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                <h3>Tahukah Anda?</h3>
+                <p>Memilah sampah dari rumah dapat mengurangi hingga <b>60%</b> sampah yang berakhir di TPA.</p>
+                <a href="#" class="facts-btn" onclick="openPilahAnalyzer(event)">Mulai Pilah Sekarang! ♻️</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="belajar-creative-section">
+        <div class="creative-container">
+            <div class="creative-badge" data-aos="fade-up">♻️ Solusi Kreatif ✨</div>
+            <h2 class="creative-title" data-aos="fade-up" data-aos-delay="100">
+                <span>Kreativitas</span> Tanpa Batas dari <span>Sampah</span>
+            </h2>
+            <p class="creative-desc" data-aos="fade-up" data-aos-delay="200">
+                Jelajahi ide brilian mengubah sampah menjadi barang berguna.
+            </p>
+
+            <div class="creative-features" data-aos="fade-up" data-aos-delay="300">
+                <span>🌱 Ramah Lingkungan</span>
+                <span>🎉 Mudah & Seru</span>
+                <span>⭐ Hasil Berkualitas</span>
+            </div>
+
+            <div class="creative-grid">
+                <!-- ITEM 1 -->
+                <div class="creative-card hover-lift" data-aos="fade-up" data-aos-delay="150"
+                    onclick="openCreativeDetail(0)">
+                    <img src="image/vertical-garden.jpg" alt="">
+                    <div class="creative-card-content">
+                        <h3>Botol Plastik: Vertical Garden</h3>
+                        <p>Manfaatkan botol bekas untuk kebun mini.</p>
+                        <div class="creative-tags"><span>Hemat</span><span>Hijau</span></div>
+                        <div class="creative-info"><span>⏱ 30 min</span><span>🛠 6 step</span></div>
+                    </div>
+                </div>
+                <!-- ITEM 2 -->
+                <div class="creative-card hover-lift" data-aos="fade-up" data-aos-delay="250"
+                    onclick="openCreativeDetail(1)">
+                    <img src="image/speaker.jpg" alt="">
+                    <div class="creative-card-content">
+                        <h3>Kaleng Bekas: Speaker</h3>
+                        <p>Ubah kaleng jadi speaker unik.</p>
+                        <div class="creative-tags"><span>Portable</span><span>Unik</span></div>
+                        <div class="creative-info"><span>⏱ 45 min</span><span>🛠 6 step</span></div>
+                    </div>
+                </div>
+                <!-- ITEM 3 -->
+                <div class="creative-card hover-lift" data-aos="fade-up" data-aos-delay="350"
+                    onclick="openCreativeDetail(2)">
+                    <img src="image/tas-koran.jpg" alt="">
+                    <div class="creative-card-content">
+                        <h3>Koran: Tas Belanja</h3>
+                        <p>Tas stylish zero waste dari koran.</p>
+                        <div class="creative-tags"><span>Zero Waste</span><span>Fashion</span></div>
+                        <div class="creative-info"><span>⏱ 20 min</span><span>🛠 6 step</span></div>
+                    </div>
+                </div>
+                <!-- ITEM 4 -->
+                <div class="creative-card hover-lift" data-aos="fade-up" data-aos-delay="450"
+                    onclick="openCreativeDetail(3)">
+                    <img src="image/cd-lamp.jpg" alt="">
+                    <div class="creative-card-content">
+                        <h3>CD Bekas: Lampu Hias</h3>
+                        <p>Lampu estetik dari kepingan CD.</p>
+                        <div class="creative-tags"><span>Estetik</span><span>Lampu</span></div>
+                        <div class="creative-info"><span>⏱ 60 min</span><span>🛠 6 step</span></div>
+                    </div>
+                </div>
+                <!-- ITEM 5 -->
+                <div class="creative-card hover-lift" data-aos="fade-up" data-aos-delay="550"
+                    onclick="openCreativeDetail(4)">
+                    <img src="image/pot-ban.jpg" alt="">
+                    <div class="creative-card-content">
+                        <h3>Ban Bekas: Pot Tanaman</h3>
+                        <p>Ban bekas jadi pot taman kuat.</p>
+                        <div class="creative-tags"><span>Outdoor</span><span>Kuat</span></div>
+                        <div class="creative-info"><span>⏱ 50 min</span><span>🛠 6 step</span></div>
+                    </div>
+                </div>
+                <!-- ITEM 6 -->
+                <div class="creative-card hover-lift" data-aos="fade-up" data-aos-delay="650"
+                    onclick="openCreativeDetail(5)">
+                    <img src="image/styrofoam-mini.jpg" alt="">
+                    <div class="creative-card-content">
+                        <h3>Styrofoam: Dekorasi</h3>
+                        <p>Miniatur lucu dari styrofoam.</p>
+                        <div class="creative-tags"><span>Dekoratif</span><span>Mudah</span></div>
+                        <div class="creative-info"><span>⏱ 25 min</span><span>🛠 6 step</span></div>
+                    </div>
+                </div>
+                <!-- ITEM 7 -->
+                <div class="creative-card hover-lift" data-aos="fade-up" data-aos-delay="750"
+                    onclick="openCreativeDetail(6)">
+                    <img src="image/kayu-pallete.jpg" alt="">
+                    <div class="creative-card-content">
+                        <h3>Kayu Palet: Rak Buku</h3>
+                        <p>Rak buku minimalis kayu bekas.</p>
+                        <div class="creative-tags"><span>Estetik</span><span>Kokoh</span></div>
+                        <div class="creative-info"><span>⏱ 90 min</span><span>🛠 6 step</span></div>
+                    </div>
+                </div>
+                <!-- ITEM 8 -->
+                <div class="creative-card hover-lift" data-aos="fade-up" data-aos-delay="850"
+                    onclick="openCreativeDetail(7)">
+                    <img src="image/botol-lampu.jpg" alt="">
+                    <div class="creative-card-content">
+                        <h3>Botol Kaca: Lampu Meja</h3>
+                        <p>Lampu meja industrial estetik.</p>
+                        <div class="creative-tags"><span>Industrial</span><span>Kaca</span></div>
+                        <div class="creative-info"><span>⏱ 40 min</span><span>🛠 6 step</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="creative-share glass-panel" data-aos="zoom-in" data-aos-delay="200">
+                <p style="color:white; margin-bottom:15px;">Punya ide kreatif lainnya? Bagikan ke komunitas! 🤝</p>
+                <button class="share-btn">Bagikan Ide Kreatif</button>
+            </div>
+        </div>
+    </section>
+    <!-- ECO-INNOVATION LAB SECTION -->
+    <section class="eco-lab-section" id="ecolab">
+        <div class="container">
+            <div class="lab-header" data-aos="fade-up">
+                <span class="lab-badge"><i class="fa-solid fa-flask"></i> EXPERIMENTAL ZONE</span>
+                <h2>Eco-Innovation Lab</h2>
+                <p>Eksplorasi teknologi masa depan yang akan menyelamatkan planet kita. Simulasikan dampaknya secara
+                    real-time!</p>
+            </div>
+
+            <div class="lab-grid">
+                <!-- Tech Card 1: Solar Paint -->
+                <div class="lab-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="lab-visual">
+                        <i class="fa-solid fa-sun lab-hologram color-1"></i>
+                        <div class="lab-rings color-1"></div>
+                    </div>
+                    <div class="lab-content">
+                        <h3>🌞 Solar Paint</h3>
+                        <p class="lab-desc">Cat khusus yang mengubah permukaan apapun menjadi panel surya.</p>
+                        <div class="lab-analysis">
+                            <div class="analysis-row">
+                                <span>Efisiensi Energi <span id="val1_1">0%</span></span>
+                                <div class="progress-bar">
+                                    <div class="fill color-1" id="bar1_1"></div>
+                                </div>
+                            </div>
+                            <div class="analysis-row">
+                                <span>Adopsi Global <span id="val1_2">0%</span></span>
+                                <div class="progress-bar">
+                                    <div class="fill color-1" id="bar1_2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn-lab" onclick="simulateTech(1)">
+                            <i class="fa-solid fa-play"></i> Simulasi Dampak
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tech Card 2: Ocean Cleanup AI -->
+                <div class="lab-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="lab-visual">
+                        <i class="fa-solid fa-robot lab-hologram color-2"></i>
+                        <div class="lab-rings color-2"></div>
+                    </div>
+                    <div class="lab-content">
+                        <h3>🤖 Ocean Cleanup AI</h3>
+                        <p class="lab-desc">Robot otonom yang membersihkan mikroplastik dari lautan.</p>
+                        <div class="lab-analysis">
+                            <div class="analysis-row">
+                                <span>Plastik Dibersihkan <span id="val2_1">0%</span></span>
+                                <div class="progress-bar">
+                                    <div class="fill color-2" id="bar2_1"></div>
+                                </div>
+                            </div>
+                            <div class="analysis-row">
+                                <span>Coverage Laut <span id="val2_2">0%</span></span>
+                                <div class="progress-bar">
+                                    <div class="fill color-2" id="bar2_2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn-lab" onclick="simulateTech(2)">
+                            <i class="fa-solid fa-play"></i> Simulasi Dampak
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tech Card 3: Bio-Volt Battery -->
+                <div class="lab-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="lab-visual">
+                        <i class="fa-solid fa-bolt lab-hologram color-3"></i>
+                        <div class="lab-rings color-3"></div>
+                    </div>
+                    <div class="lab-content">
+                        <h3>⚡ Bio-Volt Battery</h3>
+                        <p class="lab-desc">Baterai organik dari limbah pertanian yang 100% ramah lingkungan.</p>
+                        <div class="lab-analysis">
+                            <div class="analysis-row">
+                                <span>Kapasitas Output <span id="val3_1">0%</span></span>
+                                <div class="progress-bar">
+                                    <div class="fill color-3" id="bar3_1"></div>
+                                </div>
+                            </div>
+                            <div class="analysis-row">
+                                <span>Biodegradability <span id="val3_2">0%</span></span>
+                                <div class="progress-bar">
+                                    <div class="fill color-3" id="bar3_2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn-lab" onclick="simulateTech(3)">
+                            <i class="fa-solid fa-play"></i> Simulasi Dampak
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tech Card 4: Carbon Capture Trees -->
+                <div class="lab-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="lab-visual">
+                        <i class="fa-solid fa-tree lab-hologram color-4"></i>
+                        <div class="lab-rings color-4"></div>
+                    </div>
+                    <div class="lab-content">
+                        <h3>🌳 Carbon Capture Trees</h3>
+                        <p class="lab-desc">Pohon buatan dengan AI yang menyerap CO2 1000x lebih efisien.</p>
+                        <div class="lab-analysis">
+                            <div class="analysis-row">
+                                <span>CO2 Diserap <span id="val4_1">0%</span></span>
+                                <div class="progress-bar">
+                                    <div class="fill color-4" id="bar4_1"></div>
+                                </div>
+                            </div>
+                            <div class="analysis-row">
+                                <span>Oksigen Output <span id="val4_2">0%</span></span>
+                                <div class="progress-bar">
+                                    <div class="fill color-4" id="bar4_2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn-lab" onclick="simulateTech(4)">
+                            <i class="fa-solid fa-play"></i> Simulasi Dampak
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tech Card 5: Biodegradable Packaging -->
+                <div class="lab-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="lab-visual">
+                        <i class="fa-solid fa-box-open lab-hologram color-5"></i>
+                        <div class="lab-rings color-5"></div>
+                    </div>
+                    <div class="lab-content">
+                        <h3>📦 Mycelium Packaging</h3>
+                        <p class="lab-desc">Kemasan dari jamur yang terurai dalam 30 hari.</p>
+                        <div class="lab-analysis">
+                            <div class="analysis-row">
+                                <span>Decompose Rate <span id="val5_1">0%</span></span>
+                                <div class="progress-bar">
+                                    <div class="fill color-5" id="bar5_1"></div>
+                                </div>
+                            </div>
+                            <div class="analysis-row">
+                                <span>Plastik Diganti <span id="val5_2">0%</span></span>
+                                <div class="progress-bar">
+                                    <div class="fill color-5" id="bar5_2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn-lab" onclick="simulateTech(5)">
+                            <i class="fa-solid fa-play"></i> Simulasi Dampak
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tech Card 6: Smart Waste Sorting AI -->
+                <div class="lab-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="lab-visual">
+                        <i class="fa-solid fa-trash-can lab-hologram color-6"></i>
+                        <div class="lab-rings color-6"></div>
+                    </div>
+                    <div class="lab-content">
+                        <h3>🗑️ Smart Waste Sorter</h3>
+                        <p class="lab-desc">AI vision yang otomatis memilah sampah dalam milidetik.</p>
+                        <div class="lab-analysis">
+                            <div class="analysis-row">
+                                <span>Akurasi Sorting <span id="val6_1">0%</span></span>
+                                <div class="progress-bar">
+                                    <div class="fill color-6" id="bar6_1"></div>
+                                </div>
+                            </div>
+                            <div class="analysis-row">
+                                <span>Recycling Rate <span id="val6_2">0%</span></span>
+                                <div class="progress-bar">
+                                    <div class="fill color-6" id="bar6_2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn-lab" onclick="simulateTech(6)">
+                            <i class="fa-solid fa-play"></i> Simulasi Dampak
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IMPACT DASHBOARD -->
+            <div class="impact-dashboard glass-panel" data-aos="fade-up">
+                <h3><i class="fa-solid fa-chart-line"></i> Global Eco Impact Dashboard</h3>
+                <div class="impact-stats">
+                    <div class="impact-stat">
+                        <div class="impact-ring green">
+                            <span id="impactTrees">0</span>
+                        </div>
+                        <p>Pohon Ditanam</p>
+                    </div>
+                    <div class="impact-stat">
+                        <div class="impact-ring blue">
+                            <span id="impactCO2">0</span>
+                        </div>
+                        <p>Ton CO2 Diserap</p>
+                    </div>
+                    <div class="impact-stat">
+                        <div class="impact-ring yellow">
+                            <span id="impactPlastic">0</span>
+                        </div>
+                        <p>Kg Plastik Didaur</p>
+                    </div>
+                    <div class="impact-stat">
+                        <div class="impact-ring purple">
+                            <span id="impactEnergy">0</span>
+                        </div>
+                        <p>kWh Energi Hemat</p>
+                    </div>
+                </div>
+                <button class="btn-primary" onclick="runGlobalSimulation()">
+                    <i class="fa-solid fa-globe"></i> Run Global Simulation
+                </button>
+            </div>
+
+            <!-- ECO CALCULATORS -->
+            <div class="eco-calculators" data-aos="fade-up">
+                <h3><i class="fa-solid fa-calculator"></i> Eco Calculators</h3>
+                <div class="calc-tabs">
+                    <button class="calc-tab active" onclick="showCalc('energy')">⚡ Energi</button>
+                    <button class="calc-tab" onclick="showCalc('carbon')">🌍 Karbon</button>
+                    <button class="calc-tab" onclick="showCalc('water')">💧 Air</button>
+                </div>
+
+                <!-- Energy Calculator -->
+                <div class="calc-panel active" id="calcEnergy">
+                    <h4>Kalkulator Hemat Energi</h4>
+                    <div class="calc-form">
+                        <div class="calc-input">
+                            <label>Jumlah Lampu LED</label>
+                            <input type="number" id="ledCount" value="10" min="0">
+                        </div>
+                        <div class="calc-input">
+                            <label>Jam Penggunaan/Hari</label>
+                            <input type="number" id="ledHours" value="8" min="0" max="24">
+                        </div>
+                        <button class="btn-lab" onclick="calculateEnergy()">
+                            <i class="fa-solid fa-bolt"></i> Hitung Penghematan
+                        </button>
+                    </div>
+                    <div class="calc-result" id="energyResult"></div>
+                </div>
+
+                <!-- Carbon Calculator -->
+                <div class="calc-panel" id="calcCarbon">
+                    <h4>Kalkulator Jejak Karbon</h4>
+                    <div class="calc-form">
+                        <div class="calc-input">
+                            <label>KM Berkendara/Bulan</label>
+                            <input type="number" id="carKm" value="500" min="0">
+                        </div>
+                        <div class="calc-input">
+                            <label>Jenis Kendaraan</label>
+                            <select id="carType">
+                                <option value="car">Mobil BBM</option>
+                                <option value="motor">Motor</option>
+                                <option value="ev">Kendaraan Listrik</option>
+                                <option value="bus">Transportasi Umum</option>
+                            </select>
+                        </div>
+                        <button class="btn-lab" onclick="calculateCarbon()">
+                            <i class="fa-solid fa-leaf"></i> Hitung Jejak Karbon
+                        </button>
+                    </div>
+                    <div class="calc-result" id="carbonResult"></div>
+                </div>
+
+                <!-- Water Calculator -->
+                <div class="calc-panel" id="calcWater">
+                    <h4>Kalkulator Penggunaan Air</h4>
+                    <div class="calc-form">
+                        <div class="calc-input">
+                            <label>Mandi (menit/hari)</label>
+                            <input type="number" id="showerMin" value="10" min="0">
+                        </div>
+                        <div class="calc-input">
+                            <label>Sikat Gigi (kali/hari)</label>
+                            <input type="number" id="brushTimes" value="2" min="0">
+                        </div>
+                        <button class="btn-lab" onclick="calculateWater()">
+                            <i class="fa-solid fa-droplet"></i> Hitung Penggunaan
+                        </button>
+                    </div>
+                    <div class="calc-result" id="waterResult"></div>
+                </div>
+            </div>
+
+            <!-- LAB EXPERIMENT JOURNAL -->
+            <div class="lab-journal glass-panel" data-aos="fade-up">
+                <h3><i class="fa-solid fa-book"></i> Lab Experiment Journal</h3>
+                <p>Track eksperimen eco-mu dan kumpulkan badges!</p>
+                <div class="journal-badges" id="journalBadges">
+                    <!-- Badges will be populated by JS -->
+                </div>
+                <div class="journal-progress">
+                    <div class="journal-progress-bar">
+                        <div class="journal-progress-fill" id="journalFill"></div>
+                    </div>
+                    <span id="journalText">0/6 Teknologi Disimulasikan</span>
+                </div>
+                <button class="btn-primary" id="claimCertBtn" onclick="claimCertificate()" disabled>
+                    <i class="fa-solid fa-certificate"></i> Klaim Sertifikat
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3D WASTE SORTING SECTION -->
+    <section id="waste-sorting-3d" class="waste-sorting-section">
+        <div class="ws-container">
+            <div class="ws-header" data-aos="fade-down">
+                <h2><i class="fa-solid fa-recycle"></i> 3D Waste Sorting Gallery</h2>
+                <p>Jelajahi jenis sampah dan cara pemilahannya secara interaktif. Klik kartu untuk detail lengkap.</p>
+            </div>
+
+            <div id="canvas-container" class="element-3d-container"></div>
+
+            <!-- OVERLAY INFO PANEL (Hidden by default) -->
+            <div id="ws-info-overlay" class="ws-overlay">
+                <button id="ws-close-btn" class="ws-close-btn"><i class="fa-solid fa-times"></i></button>
+                <div class="ws-content-card">
+                    <!-- DYNAMIC IMAGE CONTAINER -->
+                    <div id="ws-dynamic-image-container" class="ws-image-banner">
+                        <img id="ws-random-image" src="" alt="Waste Image">
+                    </div>
+
+                    <div class="ws-content-card-inner">
+                        <div class="ws-card-header">
+                            <div class="ws-icon-circle" id="ws-icon-display">
+                                <i class="fa-solid fa-leaf"></i>
+                            </div>
+                            <h3 id="ws-title-display">Organik</h3>
+                        </div>
+                        <div class="ws-card-body">
+                            <p id="ws-desc-display" class="ws-main-desc">Sampah yang berasal dari sisa makhluk hidup dan
+                                mudah terurai.</p>
+
+                            <div class="ws-details-grid">
+                                <div class="ws-detail-item">
+                                    <h4><i class="fa-solid fa-clock"></i> Waktu Urai</h4>
+                                    <span id="ws-time-display">1 - 6 Bulan</span>
+                                </div>
+                                <div class="ws-detail-item">
+                                    <h4><i class="fa-solid fa-dumpster"></i> Cara Kelola</h4>
+                                    <span id="ws-method-display">Kompos / Biopori</span>
+                                </div>
+                            </div>
+
+                            <!-- EXPANDED DATA SECTIONS -->
+                            <div class="ws-expanded-info">
+                                <div class="ws-info-block impact">
+                                    <h4><i class="fa-solid fa-triangle-exclamation"></i> Dampak Lingkungan</h4>
+                                    <p id="ws-impact-display">Menghasilkan gas metana jika tertimbun di TPA.</p>
+                                </div>
+                                <div class="ws-info-block tips">
+                                    <h4><i class="fa-solid fa-lightbulb"></i> Tips Pengurangan</h4>
+                                    <p id="ws-tips-display">Habiskan makanan, olah sisa sayur jadi kaldu.</p>
+                                </div>
+                                <div class="ws-info-block funfact">
+                                    <h4><i class="fa-solid fa-star"></i> Fakta Unik</h4>
+                                    <p id="ws-funfact-display">Kulit jeruk bisa jadi pembersih alami!</p>
+                                </div>
+                            </div>
+
+                            <div class="ws-examples">
+                                <h4>Contoh:</h4>
+                                <p id="ws-example-display">Sisa makanan, kulit buah, daun kering, ranting pohon.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INSTRUCTIONS -->
+            <div class="ws-instructions">
+                <i class="fa-solid fa-mouse"></i> Drag to Rotate &bull; Click to Explore
+            </div>
+        </div>
+    </section>
+
+    <!-- LIBRARIES -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="waste-sorting.js"></script>
+
+    <section class="eco-roadmap">
+        <div class="roadmap-container">
+            <h2 data-aos="fade-up">Roadmap Menuju Masa Depan Hijau</h2>
+            <p class="roadmap-desc" data-aos="fade-up" data-aos-delay="100">Step by step menuju bumi lestari dengan
+                teknologi.</p>
+
+            <div class="roadmap-timeline">
+                <!-- STEPS -->
+                <div class="roadmap-step" data-aos="fade-right">
+                    <img src="image/roadmap1.jpg" class="roadmap-photo hover-lift">
+                    <div class="roadmap-info">
+                        <h3><i class="fa-solid fa-seedling"></i> 2025 – Digital Green Awareness</h3>
+                        <p>Edukasi digital masif & platform belajar hijau.</p>
+                    </div>
+                </div>
+                <div class="roadmap-step" data-aos="fade-left">
+                    <img src="image/roadmap2.jpg" class="roadmap-photo hover-lift">
+                    <div class="roadmap-info">
+                        <h3><i class="fa-solid fa-bolt"></i> 2027 – Energi Bersih Nasional</h3>
+                        <p>Panel surya & energi hijau merata.</p>
+                    </div>
+                </div>
+                <div class="roadmap-step" data-aos="fade-right">
+                    <img src="image/roadmap3.jpg" class="roadmap-photo hover-lift">
+                    <div class="roadmap-info">
+                        <h3><i class="fa-solid fa-recycle"></i> 2030 – Zero Waste City</h3>
+                        <p>Daur ulang otomatis & sensor AI.</p>
+                    </div>
+                </div>
+                <div class="roadmap-step" data-aos="fade-left">
+                    <img src="image/roadmap4.jpg" class="roadmap-photo hover-lift">
+                    <div class="roadmap-info">
+                        <h3><i class="fa-solid fa-earth-asia"></i> 2035 – Planet Monitoring</h3>
+                        <p>Pantau hutan real-time via satelit.</p>
+                    </div>
+                </div>
+                <div class="roadmap-step" data-aos="fade-right">
+                    <img src="image/roadmap5.jpg" class="roadmap-photo hover-lift">
+                    <div class="roadmap-info">
+                        <h3><i class="fa-solid fa-city"></i> 2040 – Smart City 2.0</h3>
+                        <p>Transportasi otonom & emisi rendah.</p>
+                    </div>
+                </div>
+                <div class="roadmap-step" data-aos="fade-left">
+                    <img src="image/roadmap6.jpg" class="roadmap-photo hover-lift">
+                    <div class="roadmap-info">
+                        <h3><i class="fa-solid fa-water"></i> 2045 – Global Clean Water</h3>
+                        <p>Teknologi pemurnian air canggih.</p>
+                    </div>
+                </div>
+                <div class="roadmap-step" data-aos="fade-right">
+                    <img src="image/roadmap7.jpg" class="roadmap-photo hover-lift">
+                    <div class="roadmap-info">
+                        <h3><i class="fa-solid fa-leaf"></i> 2050 – Revolution</h3>
+                        <p>Ekosistem bumi pulih & berkelanjutan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="learn-grid" id="materi">
+        <h2 data-aos="fade-up">Materi Pembelajaran</h2>
+        <div class="grid container">
+            <!-- 15 CARDS with onclick handlers -->
+            <div class="learn-card hover-lift" data-aos="zoom-in" onclick="openMaterialModal(0)"><img
+                    src="image/sampah.jpg">
+                <h3>Pengelolaan Sampah</h3>
+                <p>Memilah sampah organik & anorganik.</p><a class="btn-card">Pelajari</a>
+            </div>
+            <div class="learn-card hover-lift" data-aos="zoom-in" data-aos-delay="100" onclick="openMaterialModal(1)">
+                <img src="image/recycle.jpg">
+                <h3>Daur Ulang</h3>
+                <p>Ubah sampah jadi berguna.</p><a class="btn-card">Pelajari</a>
+            </div>
+            <div class="learn-card hover-lift" data-aos="zoom-in" data-aos-delay="200" onclick="openMaterialModal(2)">
+                <img src="image/lingkungan.jpg">
+                <h3>Konservasi Alam</h3>
+                <p>Jaga hutan dan laut.</p><a class="btn-card">Pelajari</a>
+            </div>
+            <div class="learn-card hover-lift" data-aos="zoom-in" data-aos-delay="300" onclick="openMaterialModal(3)">
+                <img src="image/energi.jpg">
+                <h3>Energi Hijau</h3>
+                <p>Surya, angin, biomassa.</p><a class="btn-card">Pelajari</a>
+            </div>
+            <div class="learn-card hover-lift" data-aos="zoom-in" data-aos-delay="400" onclick="openMaterialModal(4)">
+                <img src="image/air.jpg">
+                <h3>Pengelolaan Air</h3>
+                <p>Hemat air & filtrasi.</p><a class="btn-card">Pelajari</a>
+            </div>
+            <div class="learn-card hover-lift" data-aos="zoom-in" data-aos-delay="500" onclick="openMaterialModal(5)">
+                <img src="image/polusi.jpg">
+                <h3>Kurangi Polusi</h3>
+                <p>Udara bersih & sehat.</p><a class="btn-card">Pelajari</a>
+            </div>
+            <div class="learn-card hover-lift" data-aos="zoom-in" data-aos-delay="600" onclick="openMaterialModal(6)">
+                <img src="image/transport.jpg">
+                <h3>Transport Hijau</h3>
+                <p>Kendaraan ramah lingkungan.</p><a class="btn-card">Pelajari</a>
+            </div>
+            <div class="learn-card hover-lift" data-aos="zoom-in" data-aos-delay="700" onclick="openMaterialModal(7)">
+                <img src="image/komunitas.jpg">
+                <h3>Komunitas</h3>
+                <p>Aksi sosial lingkungan.</p><a class="btn-card">Pelajari</a>
+            </div>
+            <div class="learn-card hover-lift" data-aos="zoom-in" data-aos-delay="800" onclick="openMaterialModal(8)">
+                <img src="image/kebun.jpg">
+                <h3>Urban Farming</h3>
+                <p>Tanam sendiri dirumah.</p><a class="btn-card">Pelajari</a>
+            </div>
+            <div class="learn-card hover-lift" data-aos="zoom-in" data-aos-delay="900" onclick="openMaterialModal(9)">
+                <img src="image/climate.jpg">
+                <h3>Climate Change</h3>
+                <p>Dampak & mitigasi.</p><a class="btn-card">Pelajari</a>
+            </div>
+            <div class="learn-card hover-lift" data-aos="zoom-in" data-aos-delay="1000" onclick="openMaterialModal(10)">
+                <img src="image/habitat.jpg">
+                <h3>Habitat Hewan</h3>
+                <p>Lindungi satwa liar.</p><a class="btn-card">Pelajari</a>
+            </div>
+            <div class="learn-card hover-lift" data-aos="zoom-in" data-aos-delay="1100" onclick="openMaterialModal(11)">
+                <img src="image/teknologi.jpg">
+                <h3>Eco Tech</h3>
+                <p>Inovasi teknologi hijau.</p><a class="btn-card">Pelajari</a>
+            </div>
+            <div class="learn-card hover-lift" data-aos="zoom-in" data-aos-delay="1200" onclick="openMaterialModal(12)">
+                <img src="image/higiene.jpg">
+                <h3>Kebersihan</h3>
+                <p>Lingkungan sehat & bersih.</p><a class="btn-card">Pelajari</a>
+            </div>
+            <div class="learn-card hover-lift" data-aos="zoom-in" data-aos-delay="1300" onclick="openMaterialModal(13)">
+                <img src="image/sdm.jpg">
+                <h3>Edukasi</h3>
+                <p>Sebarkan kesadaran.</p><a class="btn-card">Pelajari</a>
+            </div>
+            <div class="learn-card hover-lift" data-aos="zoom-in" data-aos-delay="1400" onclick="openMaterialModal(14)">
+                <img src="image/energi2.jpg">
+                <h3>Hemat Listrik</h3>
+                <p>Efisiensi energi rumah.</p><a class="btn-card">Pelajari</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEARNING MATERIAL DETAIL MODAL -->
+    <div class="material-modal-overlay" id="materialModal">
+        <div class="material-modal glass-panel">
+            <button class="material-close" onclick="closeMaterialModal()"><i class="fa-solid fa-times"></i></button>
+
+            <div class="material-header" id="materialHeader">
+                <img id="materialImg" src="" alt="">
+                <div class="material-header-overlay">
+                    <div class="material-badge" id="materialBadge"><i class="fa-solid fa-book"></i> Materi</div>
+                    <h2 id="materialTitle">Judul Materi</h2>
+                    <div class="material-meta">
+                        <span><i class="fa-solid fa-clock"></i> <span id="materialTime">10 menit baca</span></span>
+                        <span><i class="fa-solid fa-signal"></i> <span id="materialLevel">Pemula</span></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="material-body">
+                <!-- Overview Section -->
+                <div class="material-section">
+                    <h3><i class="fa-solid fa-info-circle"></i> Gambaran Umum</h3>
+                    <p id="materialOverview">Deskripsi materi...</p>
+                </div>
+
+                <!-- Key Points -->
+                <div class="material-section">
+                    <h3><i class="fa-solid fa-key"></i> Poin Penting</h3>
+                    <ul class="material-points" id="materialPoints"></ul>
+                </div>
+
+                <!-- Statistics -->
+                <div class="material-section">
+                    <h3><i class="fa-solid fa-chart-bar"></i> Fakta & Statistik</h3>
+                    <div class="material-stats" id="materialStats"></div>
+                </div>
+
+                <!-- Steps/How To -->
+                <div class="material-section">
+                    <h3><i class="fa-solid fa-list-ol"></i> Langkah-Langkah Aksi</h3>
+                    <div class="material-steps" id="materialSteps"></div>
+                </div>
+
+                <!-- Tips -->
+                <div class="material-section tips-section">
+                    <h3><i class="fa-solid fa-lightbulb"></i> Tips Praktis</h3>
+                    <div class="material-tips" id="materialTips"></div>
+                </div>
+
+                <!-- Quiz Preview -->
+                <div class="material-section quiz-preview">
+                    <h3><i class="fa-solid fa-question-circle"></i> Uji Pemahamanmu</h3>
+                    <div class="quiz-mini" id="materialQuiz"></div>
+                </div>
+            </div>
+
+            <div class="material-footer">
+                <div class="material-progress">
+                    <span id="materialProgressText">Tandai Selesai</span>
+                    <button class="btn-complete" id="btnComplete" onclick="markAsComplete()">
+                        <i class="fa-solid fa-check"></i>
+                    </button>
+                </div>
+                <div class="material-nav">
+                    <button class="btn-nav" onclick="navigateMaterial(-1)"><i class="fa-solid fa-arrow-left"></i>
+                        Sebelumnya</button>
+                    <button class="btn-nav" onclick="navigateMaterial(1)">Selanjutnya <i
+                            class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="long-eco-section">
+        <div class="container">
+            <h2 data-aos="fade-up">Mengapa Kita Harus Belajar?</h2>
+            <p data-aos="fade-up">Bumi semakin tua. Kita butuh aksi nyata, bukan sekadar kata-kata.</p>
+            <div class="long-img hover-lift" data-aos="zoom-in"><img src="image/learn-deep.jpg"></div>
+        </div>
+    </section>
+
+    <section class="cta-final">
+        <div class="container" data-aos="fade-up">
+            <h2>Siap belajar lebih jauh?</h2>
+            <p>Bergabung dengan komunitas EcoLearn sekarang!</p>
+            <a href="komunitas.html" class="btn-primary">Gabung Komunitas</a>
+        </div>
+    </section>
+
+
+
+    <!-- WASTE SORTING ANALYZER MODAL -->
+    <div class="pilah-modal-overlay" id="pilahModal" onclick="closePilahModal(event)">
+        <div class="pilah-modal glass-panel" onclick="event.stopPropagation()">
+            <button class="pilah-close" onclick="closePilahModal(event)"><i class="fa-solid fa-times"></i></button>
+
+            <div class="pilah-header">
+                <i class="fa-solid fa-recycle pilah-icon"></i>
+                <h2>Analisis Pilah Sampah</h2>
+                <p>Klik kategori sampah untuk melihat cara memilahnya dengan benar!</p>
+            </div>
+
+            <div class="pilah-bins">
+                <div class="pilah-bin organic" onclick="selectBin('organic')">
+                    <div class="bin-icon"><i class="fa-solid fa-leaf"></i></div>
+                    <h4>Organik</h4>
+                    <span class="bin-color">Hijau</span>
+                </div>
+                <div class="pilah-bin inorganic" onclick="selectBin('inorganic')">
+                    <div class="bin-icon"><i class="fa-solid fa-bottle-water"></i></div>
+                    <h4>Anorganik</h4>
+                    <span class="bin-color">Kuning</span>
+                </div>
+                <div class="pilah-bin hazardous" onclick="selectBin('hazardous')">
+                    <div class="bin-icon"><i class="fa-solid fa-biohazard"></i></div>
+                    <h4>B3</h4>
+                    <span class="bin-color">Merah</span>
+                </div>
+            </div>
+
+            <div class="pilah-content" id="pilahContent">
+                <div class="pilah-welcome">
+                    <i class="fa-solid fa-hand-pointer"></i>
+                    <p>Pilih kategori di atas untuk melihat informasi detail!</p>
+                </div>
+            </div>
+
+            <div class="pilah-quiz">
+                <h4><i class="fa-solid fa-gamepad"></i> Mini Quiz: Tebak Kategori!</h4>
+                <div class="quiz-item" id="pilahQuizItem">
+                    <span class="quiz-question">Loading...</span>
+                    <div class="quiz-options" id="pilahQuizOptions"></div>
+                </div>
+                <div class="quiz-result" id="pilahQuizResult"></div>
+            </div>
+
+            <div class="pilah-footer">
+                <a href="quiz.html" class="btn-primary">Main Quiz Lengkap <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CREATIVE SOLUTION DETAIL MODAL -->
+    <div class="creative-modal-overlay" id="creativeModal" onclick="closeCreativeModal(event)">
+        <div class="creative-detail-modal glass-panel" onclick="event.stopPropagation()">
+            <button class="creative-close" onclick="closeCreativeModal(event)"><i
+                    class="fa-solid fa-times"></i></button>
+
+            <div class="creative-detail-header">
+                <img id="creativeDetailImg" src="" alt="">
+                <div class="creative-detail-overlay">
+                    <h2 id="creativeDetailTitle">Project Title</h2>
+                    <div class="creative-detail-meta">
+                        <span id="creativeDetailTime"><i class="fa-solid fa-clock"></i> 30 min</span>
+                        <span id="creativeDetailDifficulty"><i class="fa-solid fa-star"></i> Easy</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="creative-detail-body">
+                <div class="creative-detail-section">
+                    <h4><i class="fa-solid fa-info-circle"></i> Deskripsi</h4>
+                    <p id="creativeDetailDesc">Project description goes here...</p>
+                </div>
+
+                <div class="creative-detail-section">
+                    <h4><i class="fa-solid fa-box"></i> Bahan yang Dibutuhkan</h4>
+                    <ul id="creativeDetailMaterials" class="material-list">
+                        <!-- Materials populated by JS -->
+                    </ul>
+                </div>
+
+                <div class="creative-detail-section">
+                    <h4><i class="fa-solid fa-list-check"></i> Langkah-langkah</h4>
+                    <ol id="creativeDetailSteps" class="step-list">
+                        <!-- Steps populated by JS -->
+                    </ol>
+                </div>
+
+                <div class="creative-detail-section">
+                    <h4><i class="fa-solid fa-lightbulb"></i> Tips Pro</h4>
+                    <div class="tips-box" id="creativeDetailTips">
+                        Tips will appear here...
+                    </div>
+                </div>
+
+                <div class="creative-detail-tags" id="creativeDetailTags">
+                    <!-- Tags populated by JS -->
+                </div>
+            </div>
+
+            <div class="creative-detail-footer">
+                <button class="btn-glass" onclick="shareProject()"><i class="fa-solid fa-share"></i> Bagikan</button>
+                <button class="btn-primary" onclick="closeCreativeModal(event)">Selesai! <i
+                        class="fa-solid fa-check"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p style="color:var(--text-muted); padding:40px; text-align:center;">© 2025 EcoLearn God-Tier Edition</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({ duration: 900, once: true });
+        // Mobile Menu
+        function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
+        // Loader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('learnload-screen').style.opacity = '0';
+                setTimeout(() => { document.getElementById('learnload-screen').style.display = 'none'; }, 500);
+            }, 1000);
+        });
+
+        // Video Switcher Function
+        function playVideo(videoName) {
+            const videoPlayer = document.querySelector('.mobile-video-player');
+            const videoCards = document.querySelectorAll('.video-card');
+
+            if (!videoPlayer) return;
+
+            // Update video source
+            const videoMap = {
+                'environment': 'video/environment.mp4',
+                'comunity': 'video/comunity.mp4',
+                'quiz': 'video/quiz.mp4'
+            };
+
+            if (videoMap[videoName]) {
+                videoPlayer.src = videoMap[videoName];
+                videoPlayer.play();
+            }
+
+            // Update active state on cards
+            videoCards.forEach((card, index) => {
+                card.classList.remove('active');
+                if (card.getAttribute('onclick').includes(videoName)) {
+                    card.classList.add('active');
+                }
+            });
+        }
+
+        // ===== WASTE SORTING ANALYZER =====
+        const wasteData = {
+            organic: {
+                title: '🌿 Sampah Organik',
+                color: '#00ff80',
+                examples: ['Sisa makanan', 'Sayuran busuk', 'Kulit buah', 'Daun kering', 'Ranting pohon', 'Tulang hewan', 'Ampas kopi/teh'],
+                tips: 'Bisa dijadikan kompos untuk pupuk alami. Gunakan tempat tertutup agar tidak berbau!',
+                icon: 'fa-leaf'
+            },
+            inorganic: {
+                title: '📦 Sampah Anorganik',
+                color: '#ffd700',
+                examples: ['Botol plastik', 'Kaleng minuman', 'Kertas & kardus', 'Kaca bersih', 'Kantong plastik', 'Styrofoam', 'Piring plastik'],
+                tips: 'Pastikan sudah dicuci bersih sebelum dibuang. Pisahkan berdasarkan jenis material untuk memudahkan daur ulang!',
+                icon: 'fa-bottle-water'
+            },
+            hazardous: {
+                title: '☢️ Sampah B3 (Berbahaya)',
+                color: '#ff3333',
+                examples: ['Baterai bekas', 'Lampu neon', 'Obat kadaluarsa', 'Pestisida', 'Cat & tiner', 'Elektronik rusak', 'Minyak bekas'],
+                tips: 'JANGAN buang ke tempat sampah biasa! Kumpulkan dan serahkan ke tempat pengumpulan khusus B3.',
+                icon: 'fa-biohazard'
+            }
+        };
+
+        const pilahQuizData = [
+            { item: 'Kulit pisang', answer: 'organic' },
+            { item: 'Botol air mineral', answer: 'inorganic' },
+            { item: 'Baterai bekas', answer: 'hazardous' },
+            { item: 'Kardus bekas', answer: 'inorganic' },
+            { item: 'Sisa nasi', answer: 'organic' },
+            { item: 'Lampu neon pecah', answer: 'hazardous' },
+            { item: 'Daun kering', answer: 'organic' },
+            { item: 'Kaleng minuman', answer: 'inorganic' },
+            { item: 'Obat expired', answer: 'hazardous' }
+        ];
+
+        let currentPilahQuiz = 0;
+
+        function openPilahAnalyzer(e) {
+            e.preventDefault();
+            document.getElementById('pilahModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            loadPilahQuiz();
+        }
+
+        function closePilahModal(e) {
+            e.preventDefault();
+            document.getElementById('pilahModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function selectBin(type) {
+            const data = wasteData[type];
+            const content = document.getElementById('pilahContent');
+
+            // Update active state on bins
+            document.querySelectorAll('.pilah-bin').forEach(bin => bin.classList.remove('active'));
+            document.querySelector(`.pilah-bin.${type}`).classList.add('active');
+
+            content.innerHTML = `
+                <div class="pilah-info" style="border-left: 4px solid ${data.color}">
+                    <h3 style="color: ${data.color}"><i class="fa-solid ${data.icon}"></i> ${data.title}</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 15px;">${data.tips}</p>
+                    <h4 style="margin-bottom: 10px; color: var(--white);">Contoh Sampah:</h4>
+                    <div class="waste-examples">
+                        ${data.examples.map(ex => `<span class="waste-tag" style="border-color: ${data.color}; color: ${data.color}">${ex}</span>`).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function loadPilahQuiz() {
+            currentPilahQuiz = Math.floor(Math.random() * pilahQuizData.length);
+            const quiz = pilahQuizData[currentPilahQuiz];
+            const container = document.getElementById('pilahQuizItem');
+            const options = document.getElementById('pilahQuizOptions');
+
+            container.querySelector('.quiz-question').textContent = `"${quiz.item}" termasuk sampah apa?`;
+            options.innerHTML = `
+                <button class="quiz-option" onclick="checkPilahAnswer('organic')">🌿 Organik</button>
+                <button class="quiz-option" onclick="checkPilahAnswer('inorganic')">📦 Anorganik</button>
+                <button class="quiz-option" onclick="checkPilahAnswer('hazardous')">☢️ B3</button>
+            `;
+            document.getElementById('pilahQuizResult').innerHTML = '';
+        }
+
+        function checkPilahAnswer(answer) {
+            const quiz = pilahQuizData[currentPilahQuiz];
+            const result = document.getElementById('pilahQuizResult');
+
+            if (answer === quiz.answer) {
+                result.innerHTML = '<p class="quiz-correct"><i class="fa-solid fa-check-circle"></i> Benar! Kamu pintar!</p>';
+            } else {
+                result.innerHTML = `<p class="quiz-wrong"><i class="fa-solid fa-times-circle"></i> Salah! Jawabannya: ${wasteData[quiz.answer].title}</p>`;
+            }
+
+            setTimeout(loadPilahQuiz, 2000);
+        }
+
+        // ===== CREATIVE SOLUTION DETAIL =====
+        const creativeProjects = [
+            {
+                title: 'Botol Plastik: Vertical Garden',
+                img: 'image/vertical-garden.jpg',
+                time: '30 min',
+                difficulty: 'Easy',
+                desc: 'Ubah botol plastik bekas menjadi kebun vertikal mini yang cantik! Cocok untuk menanam sayuran atau tanaman hias di ruang terbatas.',
+                materials: ['5-10 botol plastik 1.5L', 'Gunting/cutter', 'Tali/kawat', 'Tanah & pupuk', 'Bibit tanaman', 'Cat akrilik (opsional)'],
+                steps: ['Potong botol jadi dua bagian atau buat lubang di sisi samping', 'Buat lubang drainase di bagian bawah', 'Cat botol sesuai selera (opsional)', 'Isi dengan tanah dan pupuk', 'Tanam bibit dan siram secara teratur', 'Gantung di dinding atau pagar menggunakan tali'],
+                tips: '💡 Pilih tanaman yang tidak butuh banyak air seperti cabai, tomat cherry, atau herba!',
+                tags: ['Hemat', 'Hijau', 'Pemula']
+            },
+            {
+                title: 'Kaleng Bekas: Speaker DIY',
+                img: 'image/speaker.jpg',
+                time: '45 min',
+                difficulty: 'Medium',
+                desc: 'Buat speaker portable unik dari kaleng bekas! Amplifikasi suara alami tanpa listrik.',
+                materials: ['Kaleng bekas (besar)', 'Pisau & gunting', 'Amplas', 'Cat semprot', 'Lem tembak', 'Dudukan HP'],
+                steps: ['Bersihkan kaleng dan hilangkan label', 'Buat lubang sesuai ukuran HP di tutup', 'Amplas tepi agar tidak tajam', 'Cat kaleng sesuai selera', 'Pasang dudukan HP di dalam', 'Uji suara dan sesuaikan posisi'],
+                tips: '💡 Kaleng yang lebih besar menghasilkan bass yang lebih dalam!',
+                tags: ['Portable', 'Unik', 'Musik']
+            },
+            {
+                title: 'Koran: Tas Belanja Stylish',
+                img: 'image/tas-koran.jpg',
+                time: '20 min',
+                difficulty: 'Easy',
+                desc: 'Buat tas belanja ramah lingkungan dari koran bekas! Zero waste dan super stylish.',
+                materials: ['8-10 lembar koran', 'Lem kertas/kanji', 'Gunting', 'Tali rafia/pita', 'Karton (opsional)'],
+                steps: ['Lipat lembaran koran menjadi strip panjang', 'Anyam strip secara horizontal dan vertikal', 'Bentuk menjadi kotak/tas', 'Lem bagian yang bertemu', 'Buat tali dengan pita atau rafia', 'Tambahkan karton di dasar untuk kekuatan'],
+                tips: '💡 Lapisi dengan plastik bening agar tahan air dan lebih awet!',
+                tags: ['Zero Waste', 'Fashion', 'Cepat']
+            },
+            {
+                title: 'CD Bekas: Lampu Hias Disco',
+                img: 'image/cd-lamp.jpg',
+                time: '60 min',
+                difficulty: 'Medium',
+                desc: 'Ubah CD bekas menjadi lampu disco yang memantulkan cahaya warna-warni ke seluruh ruangan!',
+                materials: ['10-20 CD bekas', 'Bola styrofoam/kardus', 'Lem tembak', 'Lampu LED', 'Kabel & fitting', 'Tali gantung'],
+                steps: ['Potong CD menjadi potongan kecil', 'Siapkan bola sebagai basis', 'Tempelkan potongan CD dengan lem', 'Buat lubang untuk lampu di tengah', 'Pasang lampu LED di dalam', 'Gantung dan nyalakan!'],
+                tips: '💡 Gunakan lampu LED warna-warni untuk efek disco yang maksimal!',
+                tags: ['Estetik', 'Lampu', 'Dekorasi']
+            },
+            {
+                title: 'Ban Bekas: Pot Tanaman',
+                img: 'image/pot-ban.jpg',
+                time: '50 min',
+                difficulty: 'Medium',
+                desc: 'Transformasi ban bekas menjadi pot tanaman statement yang kuat dan tahan lama untuk taman.',
+                materials: ['Ban bekas mobil/motor', 'Pisau tajam', 'Cat outdoor', 'Kuas', 'Tanah & pupuk', 'Kaki pot (opsional)'],
+                steps: ['Bersihkan ban dari kotoran', 'Potong bagian atas jika diinginkan bentuk berbeda', 'Amplas permukaan kasar', 'Cat dengan warna cerah', 'Tambahkan kaki pot jika perlu', 'Isi tanah dan tanam tanaman!'],
+                tips: '💡 Susun beberapa ban untuk pot bertingkat yang lebih menarik!',
+                tags: ['Outdoor', 'Kuat', 'Taman']
+            },
+            {
+                title: 'Styrofoam: Miniatur Dekorasi',
+                img: 'image/styrofoam-mini.jpg',
+                time: '25 min',
+                difficulty: 'Easy',
+                desc: 'Ciptakan miniatur dan dekorasi lucu dari styrofoam bekas kemasan makanan!',
+                materials: ['Styrofoam bekas', 'Cutter tajam', 'Cat akrilik', 'Kuas halus', 'Spidol permanen', 'Lem'],
+                steps: ['Bersihkan styrofoam dari sisa makanan', 'Gambar pola yang diinginkan', 'Potong dengan cutter hati-hati', 'Cat dengan warna dasar', 'Tambahkan detail dengan spidol', 'Gabungkan bagian dengan lem'],
+                tips: '💡 Buat miniatur rumah, pohon, atau karakter lucu untuk diorama!',
+                tags: ['Dekoratif', 'Mudah', 'Anak-Anak']
+            },
+            {
+                title: 'Kayu Palet: Rak Buku Minimalis',
+                img: 'image/kayu-pallete.jpg',
+                time: '90 min',
+                difficulty: 'Hard',
+                desc: 'Buat rak buku gaya industrial minimalis dari palet kayu bekas yang kokoh dan estetik!',
+                materials: ['1-2 palet kayu', 'Gergaji', 'Amplas', 'Paku & palu', 'Cat/vernis', 'Braket dinding'],
+                steps: ['Bongkar palet dengan hati-hati', 'Pilih papan terbaik', 'Amplas hingga halus', 'Potong sesuai ukuran', 'Rangkai menjadi rak', 'Cat atau vernis untuk finishing', 'Pasang braket di dinding'],
+                tips: '💡 Amplas dengan benar untuk menghindari serpihan! Bisa tambahkan lampu LED strip untuk pencahayaan.',
+                tags: ['Estetik', 'Kokoh', 'Industrial']
+            },
+            {
+                title: 'Botol Kaca: Lampu Meja Industrial',
+                img: 'image/botol-lampu.jpg',
+                time: '40 min',
+                difficulty: 'Medium',
+                desc: 'Ubah botol kaca bekas menjadi lampu meja bergaya industrial yang elegan dan unik!',
+                materials: ['Botol kaca bersih', 'Fitting lampu', 'Kabel & steker', 'Bohlam Edison', 'Bor kaca (opsional)', 'Pasir/kerikil hias'],
+                steps: ['Bersihkan botol dari label', 'Masukkan lampu LED string ke dalam', 'Atau bor lubang untuk fitting', 'Pasang fitting dan kabel', 'Isi dasar dengan pasir hias', 'Pasang bohlam dan nyalakan!'],
+                tips: '💡 Gunakan botol unik seperti wine atau liquor untuk tampilan premium!',
+                tags: ['Industrial', 'Elegan', 'Vintage']
+            }
+        ];
+
+        function openCreativeDetail(index) {
+            const project = creativeProjects[index];
+            const modal = document.getElementById('creativeModal');
+
+            document.getElementById('creativeDetailImg').src = project.img;
+            document.getElementById('creativeDetailTitle').textContent = project.title;
+            document.getElementById('creativeDetailTime').innerHTML = `<i class="fa-solid fa-clock"></i> ${project.time}`;
+            document.getElementById('creativeDetailDifficulty').innerHTML = `<i class="fa-solid fa-star"></i> ${project.difficulty}`;
+            document.getElementById('creativeDetailDesc').textContent = project.desc;
+
+            document.getElementById('creativeDetailMaterials').innerHTML = project.materials.map(m => `<li><i class="fa-solid fa-check"></i> ${m}</li>`).join('');
+            document.getElementById('creativeDetailSteps').innerHTML = project.steps.map((s, i) => `<li><span class="step-num">${i + 1}</span>${s}</li>`).join('');
+            document.getElementById('creativeDetailTips').textContent = project.tips;
+            document.getElementById('creativeDetailTags').innerHTML = project.tags.map(t => `<span class="detail-tag">${t}</span>`).join('');
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCreativeModal(e) {
+            e.preventDefault();
+            document.getElementById('creativeModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function shareProject() {
+            const title = document.getElementById('creativeDetailTitle').textContent;
+            if (navigator.share) {
+                navigator.share({
+                    title: `Proyek Kreatif: ${title}`,
+                    text: `Coba buat ${title} dari sampah! 🌱♻️`,
+                    url: window.location.href
+                });
+            } else {
+                alert('Link proyek disalin! 📋');
+            }
+        }
+
+        // --- ECO INNOVATION LAB LOGIC ---
+        const techData = {
+            1: { name: 'Solar Paint', bars: [85, 40], vals: ['85%', '40%'] },
+            2: { name: 'Ocean Cleanup AI', bars: [92, 88], vals: ['92%', '88%'] },
+            3: { name: 'Bio-Volt Battery', bars: [98, 75], vals: ['98%', '75%'] },
+            4: { name: 'Carbon Capture Trees', bars: [95, 89], vals: ['95%', '89%'] },
+            5: { name: 'Mycelium Packaging', bars: [88, 72], vals: ['88%', '72%'] },
+            6: { name: 'Smart Waste Sorter', bars: [97, 85], vals: ['97%', '85%'] }
+        };
+
+        let simulatedTechs = JSON.parse(localStorage.getItem('eco_simulated_techs')) || [];
+
+        function simulateTech(id) {
+            const btn = event.currentTarget;
+            if (btn.innerHTML.includes("Processing") || btn.innerHTML.includes("Complete")) return;
+
+            const originalText = btn.innerHTML;
+            btn.innerHTML = `<i class="fa-solid fa-gear fa-spin"></i> Processing...`;
+
+            // Update progress bars with IDs
+            const bar1 = document.getElementById(`bar${id}_1`);
+            const bar2 = document.getElementById(`bar${id}_2`);
+            const val1 = document.getElementById(`val${id}_1`);
+            const val2 = document.getElementById(`val${id}_2`);
+
+            // Reset first
+            if (bar1) bar1.style.width = '0%';
+            if (bar2) bar2.style.width = '0%';
+
+            setTimeout(() => {
+                const data = techData[id];
+                if (bar1) bar1.style.width = `${data.bars[0]}%`;
+                if (bar2) bar2.style.width = `${data.bars[1]}%`;
+                if (val1) val1.textContent = data.vals[0];
+                if (val2) val2.textContent = data.vals[1];
+
+                btn.innerHTML = `<i class="fa-solid fa-check"></i> Analysis Complete`;
+                btn.style.borderColor = '#00ff80';
+                btn.style.color = '#00ff80';
+
+                // Track simulated tech
+                if (!simulatedTechs.includes(id)) {
+                    simulatedTechs.push(id);
+                    localStorage.setItem('eco_simulated_techs', JSON.stringify(simulatedTechs));
+                    updateJournal();
+                    showLabNotification(`🔬 ${data.name} berhasil disimulasikan!`);
+                }
+
+                setTimeout(() => {
+                    btn.innerHTML = `<i class="fa-solid fa-check-double"></i> Simulated`;
+                    btn.style.background = 'rgba(0, 255, 128, 0.1)';
+                }, 2000);
+
+            }, 800);
+        }
+
+        // Initialize journal on load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateJournal();
+            loadSimulatedTechs();
+        });
+
+        function loadSimulatedTechs() {
+            simulatedTechs.forEach(id => {
+                const btn = document.querySelector(`.lab-card:nth-child(${id}) .btn-lab`);
+                if (btn) {
+                    btn.innerHTML = `<i class="fa-solid fa-check-double"></i> Simulated`;
+                    btn.style.borderColor = '#00ff80';
+                    btn.style.color = '#00ff80';
+                    btn.style.background = 'rgba(0, 255, 128, 0.1)';
+                }
+                // Restore bar values
+                const data = techData[id];
+                const bar1 = document.getElementById(`bar${id}_1`);
+                const bar2 = document.getElementById(`bar${id}_2`);
+                const val1 = document.getElementById(`val${id}_1`);
+                const val2 = document.getElementById(`val${id}_2`);
+                if (bar1) bar1.style.width = `${data.bars[0]}%`;
+                if (bar2) bar2.style.width = `${data.bars[1]}%`;
+                if (val1) val1.textContent = data.vals[0];
+                if (val2) val2.textContent = data.vals[1];
+            });
+        }
+
+        function updateJournal() {
+            const count = simulatedTechs.length;
+            const fill = document.getElementById('journalFill');
+            const text = document.getElementById('journalText');
+            const btn = document.getElementById('claimCertBtn');
+            const badges = document.getElementById('journalBadges');
+
+            if (fill) fill.style.width = `${(count / 6) * 100}%`;
+            if (text) text.textContent = `${count}/6 Teknologi Disimulasikan`;
+            if (btn) btn.disabled = count < 6;
+
+            // Render badges
+            if (badges) {
+                const badgeIcons = ['🌞', '🤖', '⚡', '🌳', '📦', '🗑️'];
+                const badgeNames = ['Solar Expert', 'Ocean Saver', 'Power Master', 'Carbon Hero', 'Eco Packer', 'Waste Wizard'];
+                badges.innerHTML = badgeIcons.map((icon, i) => `
+                    <div class="journal-badge ${simulatedTechs.includes(i + 1) ? 'earned' : ''}">
+                        <span class="badge-icon">${icon}</span>
+                        <span class="badge-name">${badgeNames[i]}</span>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function claimCertificate() {
+            if (simulatedTechs.length < 6) return;
+            const userName = localStorage.getItem('eco_user_name') || prompt('Masukkan nama untuk sertifikat:');
+            if (!userName) return;
+            localStorage.setItem('eco_user_name', userName);
+            showLabNotification(`🎓 Selamat ${userName}! Sertifikat "Eco-Innovation Expert" telah diklaim!`);
+
+            // Update button
+            const btn = document.getElementById('claimCertBtn');
+            btn.innerHTML = '<i class="fa-solid fa-check"></i> Sertifikat Diklaim';
+            btn.style.background = 'linear-gradient(90deg, #ffd700, #ff6400)';
+            btn.disabled = true;
+        }
+
+        // IMPACT DASHBOARD
+        function runGlobalSimulation() {
+            const btn = event.currentTarget;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Simulating...';
+
+            const targets = { trees: 12890, co2: 4560, plastic: 8920, energy: 156000 };
+            const elements = {
+                trees: document.getElementById('impactTrees'),
+                co2: document.getElementById('impactCO2'),
+                plastic: document.getElementById('impactPlastic'),
+                energy: document.getElementById('impactEnergy')
+            };
+
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 0.02;
+                if (progress >= 1) {
+                    progress = 1;
+                    clearInterval(interval);
+                    btn.innerHTML = '<i class="fa-solid fa-globe"></i> Run Global Simulation';
+                    showLabNotification('🌍 Global simulation complete!');
+                }
+                elements.trees.textContent = Math.floor(targets.trees * progress).toLocaleString();
+                elements.co2.textContent = Math.floor(targets.co2 * progress).toLocaleString();
+                elements.plastic.textContent = Math.floor(targets.plastic * progress).toLocaleString();
+                elements.energy.textContent = Math.floor(targets.energy * progress).toLocaleString();
+            }, 30);
+        }
+
+        // CALCULATORS
+        function showCalc(type) {
+            document.querySelectorAll('.calc-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.calc-panel').forEach(p => p.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+            document.getElementById(`calc${type.charAt(0).toUpperCase() + type.slice(1)}`).classList.add('active');
+        }
+
+        function calculateEnergy() {
+            const leds = parseInt(document.getElementById('ledCount').value) || 0;
+            const hours = parseInt(document.getElementById('ledHours').value) || 0;
+
+            // LED saves ~80% vs incandescent (60W vs 10W)
+            const savingsPerLed = 50; // watts saved per LED vs incandescent
+            const dailySavings = (leds * savingsPerLed * hours) / 1000; // kWh
+            const monthlySavings = dailySavings * 30;
+            const yearlySavings = dailySavings * 365;
+            const moneySaved = yearlySavings * 1445; // Rp per kWh avg
+
+            document.getElementById('energyResult').innerHTML = `
+                <div class="result-card">
+                    <h5>💡 Hasil Perhitungan</h5>
+                    <p><strong>Hemat per hari:</strong> ${dailySavings.toFixed(2)} kWh</p>
+                    <p><strong>Hemat per bulan:</strong> ${monthlySavings.toFixed(1)} kWh</p>
+                    <p><strong>Hemat per tahun:</strong> ${yearlySavings.toFixed(0)} kWh</p>
+                    <p class="highlight"><strong>💰 Uang dihemat/tahun:</strong> Rp ${moneySaved.toLocaleString()}</p>
+                    <p class="eco-tip">🌱 Dengan ${leds} LED, kamu mengurangi emisi CO2 sebesar ${(yearlySavings * 0.7).toFixed(1)} kg/tahun!</p>
+                </div>
+            `;
+        }
+
+        function calculateCarbon() {
+            const km = parseInt(document.getElementById('carKm').value) || 0;
+            const type = document.getElementById('carType').value;
+
+            const emissions = { car: 0.21, motor: 0.11, ev: 0.05, bus: 0.03 }; // kg CO2 per km
+            const monthly = km * emissions[type];
+            const yearly = monthly * 12;
+
+            const comparison = type === 'car' ?
+                `Beralih ke transportasi umum bisa menghemat ${((km * 0.21) - (km * 0.03)).toFixed(1)} kg CO2/bulan!` :
+                type === 'ev' ? 'Great choice! Kendaraan listrik sangat ramah lingkungan 🌱' :
+                    type === 'bus' ? 'Luar biasa! Transportasi umum adalah pilihan paling hijau 🚌' :
+                        `Motor lebih efisien, tapi cobain EV atau transportasi umum!`;
+
+            document.getElementById('carbonResult').innerHTML = `
+                <div class="result-card">
+                    <h5>🌍 Jejak Karbon Kamu</h5>
+                    <p><strong>Emisi per bulan:</strong> ${monthly.toFixed(1)} kg CO2</p>
+                    <p><strong>Emisi per tahun:</strong> ${yearly.toFixed(0)} kg CO2</p>
+                    <p class="eco-tip">💡 ${comparison}</p>
+                    <p>🌳 Butuh ${Math.ceil(yearly / 21)} pohon untuk menyerap emisimu setahun!</p>
+                </div>
+            `;
+        }
+
+        function calculateWater() {
+            const shower = parseInt(document.getElementById('showerMin').value) || 0;
+            const brush = parseInt(document.getElementById('brushTimes').value) || 0;
+
+            // Shower: ~12L/min, Brushing with tap on: ~6L/time
+            const showerLiters = shower * 12;
+            const brushLiters = brush * 6;
+            const dailyTotal = showerLiters + brushLiters;
+            const monthlyTotal = dailyTotal * 30;
+
+            // Potential savings
+            const efficientShower = shower * 8; // low-flow showerhead
+            const efficientBrush = brush * 0.5; // tap off
+            const potentialSavings = dailyTotal - (efficientShower + efficientBrush);
+
+            document.getElementById('waterResult').innerHTML = `
+                <div class="result-card">
+                    <h5>💧 Penggunaan Air</h5>
+                    <p><strong>Mandi:</strong> ${showerLiters} liter/hari</p>
+                    <p><strong>Sikat gigi:</strong> ${brushLiters} liter/hari</p>
+                    <p><strong>Total per hari:</strong> ${dailyTotal} liter</p>
+                    <p><strong>Total per bulan:</strong> ${monthlyTotal.toLocaleString()} liter</p>
+                    <p class="eco-tip">💡 Dengan shower hemat air + matikan keran saat sikat gigi, kamu bisa hemat ${potentialSavings.toFixed(0)} liter/hari!</p>
+                </div>
+            `;
+        }
+
+        // LAB NOTIFICATION
+        function showLabNotification(message) {
+            const existing = document.querySelector('.lab-notification');
+            if (existing) existing.remove();
+
+            const notif = document.createElement('div');
+            notif.className = 'lab-notification';
+            notif.innerHTML = `<p>${message}</p>`;
+            document.body.appendChild(notif);
+
+            setTimeout(() => notif.classList.add('show'), 100);
+            setTimeout(() => {
+                notif.classList.remove('show');
+                setTimeout(() => notif.remove(), 500);
+            }, 3000);
+        }
+
+        // ========================================
+        // LEARNING MATERIAL MODAL SYSTEM
+        // ========================================
+        const learningMaterials = [
+            {
+                id: 0,
+                title: 'Pengelolaan Sampah',
+                img: 'image/sampah.jpg',
+                time: '12 menit baca',
+                level: 'Pemula',
+                badge: '🗑️ Waste Management',
+                overview: 'Pengelolaan sampah adalah proses mengumpulkan, mengangkut, memproses, mendaur ulang, dan membuang material sampah. Indonesia menghasilkan 67.8 juta ton sampah per tahun, dan hanya 7.5% yang didaur ulang dengan benar. Dengan memahami cara memilah sampah, kita bisa mengurangi dampak lingkungan secara signifikan.',
+                points: [
+                    'Sampah ORGANIK: Sisa makanan, daun, kulit buah → Bisa dijadikan kompos',
+                    'Sampah ANORGANIK: Plastik, kertas, logam, kaca → Bisa didaur ulang',
+                    'Sampah B3 (Bahan Berbahaya Beracun): Baterai, obat, elektronik → Butuh penanganan khusus',
+                    'Sampah RESIDU: Styrofoam, popok, pembalut → Sulit didaur ulang, ke TPA'
+                ],
+                stats: [
+                    { label: 'Sampah/hari Indonesia', value: '185,753 ton', icon: 'fa-trash' },
+                    { label: 'Plastik di lautan', value: '620,000 ton/tahun', icon: 'fa-water' },
+                    { label: 'Waktu terurai plastik', value: '450 tahun', icon: 'fa-clock' }
+                ],
+                steps: [
+                    'Siapkan 3-4 tempat sampah berbeda warna di rumah',
+                    'Pisahkan sampah basah (organik) dari sampah kering',
+                    'Cuci kemasan plastik/kaleng sebelum dibuang',
+                    'Kumpulkan sampah B3 terpisah, serahkan ke bank sampah',
+                    'Jadwalkan pengangkutan atau antar ke pusat daur ulang'
+                ],
+                tips: [
+                    '💡 Gunakan kantong berbeda warna: Hijau (organik), Kuning (anorganik), Merah (B3)',
+                    '💡 Kompres botol plastik agar hemat tempat',
+                    '💡 Mulai dari sampah dapur - paling mudah dipilah'
+                ],
+                quiz: { question: 'Kemana seharusnya baterai bekas dibuang?', options: ['Tempat sampah biasa', 'Tempat sampah B3', 'Dibuang ke sungai'], answer: 1 }
+            },
+            {
+                id: 1,
+                title: 'Daur Ulang',
+                img: 'image/recycle.jpg',
+                time: '15 menit baca',
+                level: 'Menengah',
+                badge: '♻️ Recycling',
+                overview: 'Daur ulang adalah proses mengubah sampah menjadi produk baru yang bernilai. Dengan mendaur ulang, kita mengurangi kebutuhan bahan mentah baru, menghemat energi, dan mengurangi polusi. Satu ton kertas daur ulang menyelamatkan 17 pohon!',
+                points: [
+                    'Kertas bisa didaur ulang hingga 5-7 kali sebelum seratnya rusak',
+                    'Aluminium bisa didaur ulang 100% tanpa kehilangan kualitas',
+                    'Kaca bisa didaur ulang tanpa batas dengan kualitas sama',
+                    'Plastik memiliki 7 jenis dengan tingkat daur ulang berbeda'
+                ],
+                stats: [
+                    { label: 'Energi hemat daur ulang', value: '70%', icon: 'fa-bolt' },
+                    { label: 'Nilai ekonomi sampah', value: 'Rp 15 Triliun/tahun', icon: 'fa-coins' },
+                    { label: 'Bank sampah aktif', value: '11,000+', icon: 'fa-building' }
+                ],
+                steps: [
+                    'Kenali simbol daur ulang (1-7) pada kemasan plastik',
+                    'Bersihkan dan keringkan sampah sebelum dikumpulkan',
+                    'Pisahkan berdasarkan jenis material',
+                    'Cari lokasi bank sampah atau pengepul terdekat',
+                    'Tukarkan dengan uang atau produk berguna'
+                ],
+                tips: [
+                    '💡 Plastik #1 (PET) dan #2 (HDPE) paling mudah didaur ulang',
+                    '💡 Kertas berminyak/basah tidak bisa didaur ulang',
+                    '💡 Gabung dengan komunitas daur ulang untuk motivasi'
+                ],
+                quiz: { question: 'Berapa kali kertas bisa didaur ulang?', options: ['1-2 kali', '5-7 kali', 'Tak terbatas'], answer: 1 }
+            },
+            {
+                id: 2,
+                title: 'Konservasi Alam',
+                img: 'image/lingkungan.jpg',
+                time: '18 menit baca',
+                level: 'Menengah',
+                badge: '🌿 Conservation',
+                overview: 'Konservasi alam adalah upaya melindungi dan melestarikan keanekaragaman hayati serta ekosistem. Indonesia memiliki 17% spesies dunia namun menghadapi deforestasi 1.5 juta hektar per tahun. Setiap aksi kecil kita berdampak besar bagi keberlangsungan alam.',
+                points: [
+                    'Indonesia punya 12% mamalia, 16% reptil, 17% burung dunia',
+                    'Hutan Indonesia menyerap 25% CO2 global',
+                    'Terumbu karang Indonesia adalah 18% dari total dunia',
+                    'Mangrove melindungi pantai dari abrasi dan tsunami'
+                ],
+                stats: [
+                    { label: 'Spesies terancam', value: '2,000+ jenis', icon: 'fa-paw' },
+                    { label: 'Hutan tersisa', value: '92 juta ha', icon: 'fa-tree' },
+                    { label: 'Area konservasi', value: '27 juta ha', icon: 'fa-shield' }
+                ],
+                steps: [
+                    'Dukung produk bersertifikat ramah lingkungan (FSC, RSPO)',
+                    'Ikut program adopsi/tanam pohon',
+                    'Kurangi konsumsi produk dari hewan terancam',
+                    'Edukasi orang terdekat tentang pentingnya konservasi',
+                    'Laporkan aktivitas ilegal seperti perburuan/penebangan liar'
+                ],
+                tips: [
+                    '💡 Pilih wisata alam yang bertanggung jawab (eco-tourism)',
+                    '💡 Jangan membeli hewan liar sebagai peliharaan',
+                    '💡 Dukung LSM konservasi seperti WWF, Greenpeace'
+                ],
+                quiz: { question: 'Berapa persen spesies burung dunia ada di Indonesia?', options: ['5%', '17%', '30%'], answer: 1 }
+            },
+            {
+                id: 3,
+                title: 'Energi Hijau',
+                img: 'image/energi.jpg',
+                time: '14 menit baca',
+                level: 'Menengah',
+                badge: '☀️ Green Energy',
+                overview: 'Energi hijau atau terbarukan adalah energi dari sumber yang tidak habis seperti matahari, angin, air, dan biomassa. Indonesia memiliki potensi energi surya 207,898 MW namun baru dimanfaatkan 0.04%. Transisi ke energi hijau adalah kunci melawan perubahan iklim.',
+                points: [
+                    'Surya: Sinar matahari diubah jadi listrik via panel fotovoltaik',
+                    'Angin: Turbin mengkonversi gerakan angin jadi listrik',
+                    'Hidro: Tenaga air menggerakkan generator listrik',
+                    'Biomassa: Limbah organik diproses jadi biogas/biodiesel'
+                ],
+                stats: [
+                    { label: 'Potensi surya', value: '207,898 MW', icon: 'fa-sun' },
+                    { label: 'Target EBT 2025', value: '23%', icon: 'fa-bullseye' },
+                    { label: 'Emisi berkurang', value: '70%', icon: 'fa-leaf' }
+                ],
+                steps: [
+                    'Pertimbangkan panel surya atap untuk rumah',
+                    'Pilih provider listrik dengan opsi energi hijau',
+                    'Gunakan pemanas air tenaga surya',
+                    'Dukung kebijakan pemerintah untuk energi terbarukan',
+                    'Investasi di sektor energi bersih'
+                ],
+                tips: [
+                    '💡 Panel surya modern bisa bertahan 25-30 tahun',
+                    '💡 ROI panel surya rumah tangga sekitar 5-7 tahun',
+                    '💡 Atap dengan kemiringan 15-25° ideal untuk panel'
+                ],
+                quiz: { question: 'Apa sumber energi terbarukan terbesar Indonesia saat ini?', options: ['Surya', 'Angin', 'Hidro/Air'], answer: 2 }
+            },
+            {
+                id: 4,
+                title: 'Pengelolaan Air',
+                img: 'image/air.jpg',
+                time: '11 menit baca',
+                level: 'Pemula',
+                badge: '💧 Water Management',
+                overview: 'Air bersih adalah sumber daya vital yang semakin langka. Indonesia mengalami krisis air dengan 100 juta orang tanpa akses air bersih memadai. Dengan menghemat dan menjaga kualitas air, kita memastikan ketersediaan untuk generasi mendatang.',
+                points: [
+                    'Hanya 2.5% air di bumi adalah air tawar',
+                    'Rata-rata orang Indonesia menggunakan 144 liter air/hari',
+                    'Kebocoran pipa bisa buang 10,000 liter/tahun',
+                    'Air hujan bisa ditampung untuk kebutuhan non-minum'
+                ],
+                stats: [
+                    { label: 'Kebutuhan air/orang', value: '144 L/hari', icon: 'fa-droplet' },
+                    { label: 'Air terbuang bocor', value: '30%', icon: 'fa-faucet-drip' },
+                    { label: 'Sungai tercemar', value: '75%', icon: 'fa-water' }
+                ],
+                steps: [
+                    'Perbaiki keran dan pipa yang bocor segera',
+                    'Pasang aerator pada keran untuk hemat 50% air',
+                    'Gunakan shower maksimal 5 menit',
+                    'Tampung air hujan untuk siram tanaman',
+                    'Gunakan mesin cuci saat penuh saja'
+                ],
+                tips: [
+                    '💡 Bak mandi membuang 150L, shower hanya 40L',
+                    '💡 Matikan keran saat gosok gigi, hemat 12L/menit',
+                    '💡 Air bekas cuci sayur bisa untuk siram tanaman'
+                ],
+                quiz: { question: 'Berapa persen air di bumi yang bisa diminum?', options: ['2.5%', '10%', '25%'], answer: 0 }
+            },
+            {
+                id: 5,
+                title: 'Kurangi Polusi',
+                img: 'image/polusi.jpg',
+                time: '13 menit baca',
+                level: 'Menengah',
+                badge: '🌫️ Pollution Control',
+                overview: 'Polusi udara, air, dan tanah membunuh 9 juta orang per tahun secara global. Jakarta termasuk 10 kota terpolusi di dunia. Dengan mengurangi polusi dari aktivitas sehari-hari, kita melindungi kesehatan diri dan lingkungan.',
+                points: [
+                    'Polusi udara: asap kendaraan, pabrik, pembakaran sampah',
+                    'Polusi air: limbah industri, sampah plastik, pupuk berlebih',
+                    'Polusi tanah: pestisida, sampah elektronik, minyak',
+                    'Polusi suara: kendaraan, konstruksi, industri'
+                ],
+                stats: [
+                    { label: 'Kematian polusi udara', value: '9 juta/tahun', icon: 'fa-skull' },
+                    { label: 'AQI rata-rata Jakarta', value: '150+ (Tidak sehat)', icon: 'fa-smog' },
+                    { label: 'Penyakit respirasi', value: '+30% kasus', icon: 'fa-lungs' }
+                ],
+                steps: [
+                    'Gunakan transportasi umum atau sepeda',
+                    'Tanam pohon di rumah untuk filter udara alami',
+                    'Pilih produk ramah lingkungan tanpa bahan kimia keras',
+                    'Jangan bakar sampah di rumah',
+                    'Dukung kebijakan udara bersih di kotamu'
+                ],
+                tips: [
+                    '💡 Tanaman spider plant dan peace lily bagus untuk indoor',
+                    '💡 Masker N95 lebih efektif dari masker kain untuk polusi',
+                    '💡 Cek AQI sebelum olahraga outdoor'
+                ],
+                quiz: { question: 'Apa penyumbang polusi udara terbesar di kota?', options: ['Pabrik', 'Kendaraan bermotor', 'Pembakaran sampah'], answer: 1 }
+            },
+            {
+                id: 6,
+                title: 'Transportasi Hijau',
+                img: 'image/transport.jpg',
+                time: '10 menit baca',
+                level: 'Pemula',
+                badge: '🚲 Green Transport',
+                overview: 'Sektor transportasi menyumbang 23% emisi gas rumah kaca global. Dengan beralih ke transportasi ramah lingkungan, kita bisa mengurangi jejak karbon pribadi hingga 2.5 ton CO2 per tahun. Kendaraan listrik dan transportasi umum adalah masa depan.',
+                points: [
+                    'Sepeda: 0 emisi, sehat, hemat biaya',
+                    'Kendaraan listrik: 70% lebih bersih dari BBM',
+                    'Transportasi umum: 1 bus = 40 mobil pribadi',
+                    'Carpooling: Berbagi kendaraan kurangi emisi 50%'
+                ],
+                stats: [
+                    { label: 'Emisi mobil/tahun', value: '4.6 ton CO2', icon: 'fa-car' },
+                    { label: 'Penghematan EV', value: 'Rp 15 juta/tahun', icon: 'fa-coins' },
+                    { label: 'Kalori bersepeda', value: '500 kcal/jam', icon: 'fa-heart-pulse' }
+                ],
+                steps: [
+                    'Jalan kaki atau bersepeda untuk jarak dekat (<3 km)',
+                    'Gunakan transportasi umum untuk jarak menengah',
+                    'Pertimbangkan motor/mobil listrik untuk komuter',
+                    'Gabung program carpooling dengan rekan kerja',
+                    'Servis kendaraan rutin untuk efisiensi bahan bakar'
+                ],
+                tips: [
+                    '💡 MRT/LRT Jakarta bisa hemat 2 jam macet per hari',
+                    '💡 Aplikasi carpooling: Nebeng, GoTogether',
+                    '💡 Tekanan ban optimal hemat 3% BBM'
+                ],
+                quiz: { question: 'Berapa emisi CO2 yang dihasilkan sepeda?', options: ['0 gram', '50 gram/km', '100 gram/km'], answer: 0 }
+            },
+            {
+                id: 7,
+                title: 'Komunitas Lingkungan',
+                img: 'image/komunitas.jpg',
+                time: '9 menit baca',
+                level: 'Pemula',
+                badge: '🤝 Community Action',
+                overview: 'Perubahan lingkungan dimulai dari komunitas. Dengan bergabung atau membentuk komunitas peduli lingkungan, dampak yang kita ciptakan berlipat ganda. Indonesia memiliki ribuan komunitas aktif dari Sabang sampai Merauke yang siap menyambutmu.',
+                points: [
+                    'Bank Sampah: Tukar sampah dengan uang/sembako',
+                    'Earth Hour: Matikan lampu 1 jam tiap tahun',
+                    'Clean Up Movement: Bersih-bersih pantai/sungai massal',
+                    'Tree Planting: Program tanam 1 juta pohon'
+                ],
+                stats: [
+                    { label: 'Bank sampah aktif', value: '11,000+', icon: 'fa-recycle' },
+                    { label: 'Relawan lingkungan', value: '500,000+', icon: 'fa-users' },
+                    { label: 'Komunitas aktif', value: '5,000+', icon: 'fa-people-group' }
+                ],
+                steps: [
+                    'Cari komunitas lingkungan terdekat via Instagram/Facebook',
+                    'Mulai dari kegiatan kecil: cleanup lokal',
+                    'Ajak teman dan keluarga ikut serta',
+                    'Bagikan kegiatan di media sosial untuk inspirasi',
+                    'Bentuk komunitas sendiri di lingkungan RT/RW'
+                ],
+                tips: [
+                    '💡 Cari: "komunitas lingkungan [nama kotamu]" di Instagram',
+                    '💡 Mulai dari WhatsApp Group RT untuk koordinasi',
+                    '💡 Kolaborasi dengan sekolah untuk edukasi anak'
+                ],
+                quiz: { question: 'Apa itu Bank Sampah?', options: ['Tempat membuang sampah', 'Tempat menukar sampah jadi uang', 'Nama LSM'], answer: 1 }
+            },
+            {
+                id: 8,
+                title: 'Urban Farming',
+                img: 'image/kebun.jpg',
+                time: '16 menit baca',
+                level: 'Menengah',
+                badge: '🌱 Urban Farming',
+                overview: 'Urban farming adalah praktik bercocok tanam di lingkungan perkotaan. Dengan lahan terbatas, kita bisa menanam sayuran sendiri menggunakan teknik hidroponik, vertikultur, atau pot. Sayuran segar dari kebun sendiri lebih sehat dan hemat biaya.',
+                points: [
+                    'Hidroponik: Tanam tanpa tanah, pakai air bernutrisi',
+                    'Vertikultur: Tanam bertingkat hemat tempat',
+                    'Container gardening: Tanam di pot/ember bekas',
+                    'Rooftop garden: Manfaatkan atap untuk berkebun'
+                ],
+                stats: [
+                    { label: 'Hemat belanja sayur', value: 'Rp 500K/bulan', icon: 'fa-money-bill' },
+                    { label: 'Panen kangkung', value: '21 hari', icon: 'fa-clock' },
+                    { label: 'Lahan minimal', value: '1 m²', icon: 'fa-ruler' }
+                ],
+                steps: [
+                    'Mulai dari tanaman mudah: kangkung, bayam, sawi',
+                    'Siapkan wadah: pot, ember bekas, botol plastik',
+                    'Gunakan media tanam: tanah campur kompos',
+                    'Siram pagi dan sore, jaga kelembaban',
+                    'Beri pupuk organik setiap 2 minggu'
+                ],
+                tips: [
+                    '💡 Lokasi minimal dapat sinar matahari 4-6 jam/hari',
+                    '💡 Kit hidroponik pemula mulai Rp 150K',
+                    '💡 Cabai rawit bisa panen terus selama 6 bulan'
+                ],
+                quiz: { question: 'Berapa lama kangkung bisa dipanen?', options: ['7 hari', '21 hari', '60 hari'], answer: 1 }
+            },
+            {
+                id: 9,
+                title: 'Perubahan Iklim',
+                img: 'image/climate.jpg',
+                time: '20 menit baca',
+                level: 'Lanjutan',
+                badge: '🌡️ Climate Change',
+                overview: 'Perubahan iklim adalah ancaman eksistensial terbesar umat manusia. Suhu bumi telah naik 1.1°C sejak era industri dan diprediksi naik 1.5°C pada 2030. Dampaknya: cuaca ekstrem, naiknya permukaan laut, dan kepunahan massal. Tapi kita masih bisa bertindak.',
+                points: [
+                    'Efek rumah kaca: CO2/CH4 menahan panas di atmosfer',
+                    'Pemanasan global: Suhu rata-rata bumi meningkat',
+                    'Net Zero 2050: Target emisi nol bersih global',
+                    'Adaptasi vs Mitigasi: Beradaptasi & mengurangi penyebab'
+                ],
+                stats: [
+                    { label: 'Kenaikan suhu', value: '+1.1°C sejak 1850', icon: 'fa-temperature-high' },
+                    { label: 'Kenaikan air laut', value: '3.7 mm/tahun', icon: 'fa-arrow-up' },
+                    { label: 'Target Paris', value: 'Maks +1.5°C', icon: 'fa-bullseye' }
+                ],
+                steps: [
+                    'Kurangi jejak karbon pribadi (transportasi, energi)',
+                    'Pilih produk lokal untuk kurangi emisi pengiriman',
+                    'Kurangi konsumsi daging merah (peternakan = 14% emisi)',
+                    'Dukung kandidat politik pro-lingkungan',
+                    'Investasi di sektor ramah lingkungan'
+                ],
+                tips: [
+                    '💡 1 kg daging sapi = 27 kg CO2 (setara 100 km mobil)',
+                    '💡 Diet plant-based kurangi jejak karbon 73%',
+                    '💡 Hitung jejak karbonmu di carbonfootprint.com'
+                ],
+                quiz: { question: 'Berapa target kenaikan suhu maksimal Perjanjian Paris?', options: ['1.5°C', '2.5°C', '3°C'], answer: 0 }
+            },
+            {
+                id: 10,
+                title: 'Habitat Hewan',
+                img: 'image/habitat.jpg',
+                time: '14 menit baca',
+                level: 'Menengah',
+                badge: '🐾 Wildlife Habitat',
+                overview: 'Habitat adalah rumah bagi satwa liar. Indonesia adalah megadiversity country dengan 300,000+ spesies, namun banyak yang terancam punah akibat hilangnya habitat. Orangutan, harimau sumatera, dan badak jawa membutuhkan perlindungan segera.',
+                points: [
+                    'Deforestasi menghilangkan 1.5 juta ha hutan/tahun',
+                    'Orangutan kehilangan 80% habitatnya dalam 20 tahun',
+                    'Harimau Sumatera tersisa <400 ekor di alam',
+                    'Badak Jawa adalah mamalia terlangka (<80 ekor)'
+                ],
+                stats: [
+                    { label: 'Spesies endemik', value: '1,500+ jenis', icon: 'fa-dna' },
+                    { label: 'Terancam punah', value: '2,000+ spesies', icon: 'fa-triangle-exclamation' },
+                    { label: 'Hutan primer hilang', value: '9.8 juta ha', icon: 'fa-tree' }
+                ],
+                steps: [
+                    'Hindari produk dari hewan terancam (gading, kulit harimau)',
+                    'Dukung sanctuary dan pusat konservasi resmi',
+                    'Jangan beli hewan eksotis ilegal sebagai peliharaan',
+                    'Pilih produk dengan sertifikasi RSPO (sawit lestari)',
+                    'Adopsi simbolis hewan melalui WWF/IUCN'
+                ],
+                tips: [
+                    '💡 Adopsi orangutan via Borneo Orangutan Survival',
+                    '💡 Wisata ke Taman Nasional mendukung konservasi',
+                    '💡 Report perdagangan satwa liar ke BKSDA'
+                ],
+                quiz: { question: 'Berapa jumlah harimau sumatera yang tersisa di alam?', options: ['Kurang dari 400', 'Sekitar 1000', 'Lebih dari 5000'], answer: 0 }
+            },
+            {
+                id: 11,
+                title: 'Teknologi Hijau',
+                img: 'image/teknologi.jpg',
+                time: '15 menit baca',
+                level: 'Lanjutan',
+                badge: '🔬 Eco Technology',
+                overview: 'Eco-technology adalah inovasi teknologi yang ramah lingkungan. Dari panel surya, kendaraan listrik, hingga AI untuk pengelolaan sampah - teknologi adalah katalisator perubahan menuju dunia berkelanjutan. Indonesia sedang mengembangkan berbagai inovasi hijau.',
+                points: [
+                    'Panel surya: Efisiensi meningkat 20% dalam 10 tahun',
+                    'Baterai solid-state: Lebih aman, kapasitas 2x lipat',
+                    'Direct Air Capture: Menyedot CO2 langsung dari udara',
+                    'Bioplastik: Plastik dari tanaman, terurai 6 bulan'
+                ],
+                stats: [
+                    { label: 'Investasi cleantech', value: '$755 miliar (2021)', icon: 'fa-coins' },
+                    { label: 'Penurunan harga EV', value: '-89% (2010-2020)', icon: 'fa-arrow-down' },
+                    { label: 'Green jobs global', value: '24 juta pekerjaan', icon: 'fa-briefcase' }
+                ],
+                steps: [
+                    'Pelajari teknologi baru melalui kursus online',
+                    'Investasi di startup/perusahaan teknologi hijau',
+                    'Gunakan produk inovatif ramah lingkungan',
+                    'Dukung riset dan pengembangan eco-tech lokal',
+                    'Bagikan informasi tentang teknologi hijau terbaru'
+                ],
+                tips: [
+                    '💡 Ikuti Coursera/edX tentang sustainability',
+                    '💡 Indonesia punya Brin untuk riset inovasi hijau',
+                    '💡 Startup eco-tech bisa dapat pendanaan green bond'
+                ],
+                quiz: { question: 'Berapa lama bioplastik terurai?', options: ['6 bulan', '5 tahun', '50 tahun'], answer: 0 }
+            },
+            {
+                id: 12,
+                title: 'Kebersihan Lingkungan',
+                img: 'image/higiene.jpg',
+                time: '8 menit baca',
+                level: 'Pemula',
+                badge: '✨ Cleanliness',
+                overview: 'Kebersihan lingkungan adalah dasar kesehatan masyarakat. Sampah berserakan menjadi sarang penyakit, mencemari air tanah, dan merusak estetika kota. Dengan menjaga kebersihan, kita menciptakan lingkungan yang sehat dan nyaman untuk semua.',
+                points: [
+                    'Sampah organik mengundang tikus dan nyamuk',
+                    'Sampah plastik menyumbat saluran air dan banjir',
+                    'Buang sampah sembarangan didenda Rp 500K',
+                    'Gotong royong mingguan efektif jaga kebersihan'
+                ],
+                stats: [
+                    { label: 'Denda buang sampah', value: 'Rp 500,000', icon: 'fa-gavel' },
+                    { label: 'Penyakit dari sampah', value: 'Diare, DBD, Tifus', icon: 'fa-virus' },
+                    { label: 'Biaya bersih-bersih', value: 'Rp 15T/tahun', icon: 'fa-broom' }
+                ],
+                steps: [
+                    'Selalu bawa kantong untuk sampahmu sendiri',
+                    'Buang sampah pada tempatnya sesuai jenis',
+                    'Ikut gotong royong membersihkan lingkungan',
+                    'Tegur dengan sopan yang membuang sampah sembarangan',
+                    'Laporkan titik sampah liar ke dinas kebersihan'
+                ],
+                tips: [
+                    '💡 Bawa tas belanja sendiri, kurangi plastik sekali pakai',
+                    '💡 Jadwalkan bersih-bersih rumah tiap akhir pekan',
+                    '💡 Ajak anak-anak sejak dini terbiasa buang sampah benar'
+                ],
+                quiz: { question: 'Berapa denda membuang sampah sembarangan?', options: ['Rp 100,000', 'Rp 500,000', 'Tidak ada denda'], answer: 1 }
+            },
+            {
+                id: 13,
+                title: 'Edukasi Lingkungan',
+                img: 'image/sdm.jpg',
+                time: '12 menit baca',
+                level: 'Menengah',
+                badge: '📚 Environmental Education',
+                overview: 'Edukasi lingkungan adalah fondasi perubahan perilaku. Dengan menyebarkan pengetahuan tentang isu lingkungan, kita menciptakan generasi yang sadar dan bertanggung jawab. Mulai dari keluarga, sekolah, hingga media sosial - setiap platform adalah kesempatan edukas.',
+                points: [
+                    'Anak-anak menyerap nilai lingkungan 3x lebih cepat',
+                    'Kurikulum adiwiyata di 35,000+ sekolah Indonesia',
+                    'Konten lingkungan viral meningkat 300% sejak 2020',
+                    'Green influencer punya dampak besar pada Gen Z'
+                ],
+                stats: [
+                    { label: 'Sekolah Adiwiyata', value: '35,000+', icon: 'fa-school' },
+                    { label: 'Kesadaran meningkat', value: '+45% (Gen Z)', icon: 'fa-chart-line' },
+                    { label: 'Konten eco viral', value: '+300%', icon: 'fa-arrow-trend-up' }
+                ],
+                steps: [
+                    'Bagikan fakta lingkungan di media sosialmu',
+                    'Ajari anak/adik tentang pentingnya lingkungan',
+                    'Buat konten edukatif: video, infografis, artikel',
+                    'Undang speaker lingkungan ke sekolah/kantor',
+                    'Jadi contoh dengan aksi nyata'
+                ],
+                tips: [
+                    '💡 Konten video singkat (TikTok/Reels) paling efektif',
+                    '💡 Cerita personal lebih mengena dari statistik saja',
+                    '💡 Kolaborasi dengan influencer untuk jangkauan luas'
+                ],
+                quiz: { question: 'Berapa banyak sekolah Adiwiyata di Indonesia?', options: ['5,000', '35,000+', '100,000'], answer: 1 }
+            },
+            {
+                id: 14,
+                title: 'Hemat Listrik',
+                img: 'image/energi2.jpg',
+                time: '10 menit baca',
+                level: 'Pemula',
+                badge: '💡 Energy Saving',
+                overview: 'Menghemat listrik bukan hanya soal tagihan, tapi juga mengurangi emisi karbon. 75% listrik Indonesia masih dari batu bara. Dengan efisiensi energi di rumah, kita ikut mengurangi polusi dan melawan perubahan iklim sambil hemat uang.',
+                points: [
+                    'AC adalah penyedot listrik terbesar di rumah (40%)',
+                    'Lampu LED hemat 80% dibanding lampu bohlam',
+                    'Standby mode tetap konsumsi 5-10% listrik',
+                    'Kulkas efisien bisa hemat Rp 500K/tahun'
+                ],
+                stats: [
+                    { label: 'Listrik dari batu bara', value: '75%', icon: 'fa-industry' },
+                    { label: 'Hemat LED vs bohlam', value: '80%', icon: 'fa-lightbulb' },
+                    { label: 'Potensi hemat rumah', value: '30%', icon: 'fa-plug' }
+                ],
+                steps: [
+                    'Ganti semua lampu ke LED',
+                    'Cabut charger dan alat elektronik saat tidak dipakai',
+                    'Set AC di suhu 24-26°C, gunakan timer',
+                    'Manfaatkan cahaya alami di siang hari',
+                    'Pilih peralatan dengan label bintang energi tinggi'
+                ],
+                tips: [
+                    '💡 AC inverter hemat 30-50% dari AC standar',
+                    '💡 Kulkas jangan terlalu penuh/kosong untuk efisiensi',
+                    '💡 Pasang timer untuk pemanas air'
+                ],
+                quiz: { question: 'Peralatan apa yang paling banyak menggunakan listrik di rumah?', options: ['Lampu', 'AC', 'Kulkas'], answer: 1 }
+            }
+        ];
+
+        let currentMaterialIndex = 0;
+        let completedMaterials = JSON.parse(localStorage.getItem('eco_completed_materials')) || [];
+
+        function openMaterialModal(index) {
+            currentMaterialIndex = index;
+            const material = learningMaterials[index];
+
+            // Set basic info
+            document.getElementById('materialImg').src = material.img;
+            document.getElementById('materialTitle').textContent = material.title;
+            document.getElementById('materialTime').textContent = material.time;
+            document.getElementById('materialLevel').textContent = material.level;
+            document.getElementById('materialBadge').innerHTML = `<i class="fa-solid fa-book"></i> ${material.badge}`;
+            document.getElementById('materialOverview').textContent = material.overview;
+
+            // Set key points
+            document.getElementById('materialPoints').innerHTML = material.points.map(p =>
+                `<li><i class="fa-solid fa-check-circle"></i> ${p}</li>`
+            ).join('');
+
+            // Set statistics
+            document.getElementById('materialStats').innerHTML = material.stats.map(s =>
+                `<div class="stat-card"><i class="fa-solid ${s.icon}"></i><div class="stat-value">${s.value}</div><div class="stat-label">${s.label}</div></div>`
+            ).join('');
+
+            // Set steps
+            document.getElementById('materialSteps').innerHTML = material.steps.map((s, i) =>
+                `<div class="step-item"><span class="step-num">${i + 1}</span><span class="step-text">${s}</span></div>`
+            ).join('');
+
+            // Set tips
+            document.getElementById('materialTips').innerHTML = material.tips.map(t =>
+                `<div class="tip-item">${t}</div>`
+            ).join('');
+
+            // Set quiz
+            const quiz = material.quiz;
+            document.getElementById('materialQuiz').innerHTML = `
+                <p class="quiz-question">${quiz.question}</p>
+                <div class="quiz-options">
+                    ${quiz.options.map((opt, i) => `
+                        <button class="quiz-option" onclick="checkMaterialQuiz(${i}, ${quiz.answer})">${opt}</button>
+                    `).join('')}
+                </div>
+                <div class="quiz-feedback" id="quizFeedback"></div>
+                `;
+
+            // Update complete button state
+            updateCompleteButton();
+
+            // Show modal
+            document.getElementById('materialModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMaterialModal() {
+            document.getElementById('materialModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function checkMaterialQuiz(selected, correct) {
+            const options = document.querySelectorAll('.quiz-option');
+            options.forEach((opt, i) => {
+                opt.disabled = true;
+                if (i === correct) {
+                    opt.classList.add('correct');
+                } else if (i === selected && i !== correct) {
+                    opt.classList.add('wrong');
+                }
+            });
+
+            const feedback = document.getElementById('quizFeedback');
+            if (selected === correct) {
+                feedback.innerHTML = '<i class="fa-solid fa-check-circle"></i> Benar! Kamu sudah memahami materi ini.';
+                feedback.className = 'quiz-feedback correct';
+            } else {
+                feedback.innerHTML = '<i class="fa-solid fa-times-circle"></i> Kurang tepat. Coba baca materinya lagi ya!';
+                feedback.className = 'quiz-feedback wrong';
+            }
+        }
+
+        function markAsComplete() {
+            if (!completedMaterials.includes(currentMaterialIndex)) {
+                completedMaterials.push(currentMaterialIndex);
+                localStorage.setItem('eco_completed_materials', JSON.stringify(completedMaterials));
+                updateCompleteButton();
+                showLabNotification(`✅ Materi "${learningMaterials[currentMaterialIndex].title}" selesai!`);
+
+                // Update card in grid
+                updateCardState(currentMaterialIndex);
+                checkCertificateEligibility();
+            }
+        }
+
+        function updateCompleteButton() {
+            const btn = document.getElementById('btnComplete');
+            const text = document.getElementById('materialProgressText');
+
+            if (completedMaterials.includes(currentMaterialIndex)) {
+                btn.classList.add('completed');
+                btn.innerHTML = '<i class="fa-solid fa-check-double"></i>';
+                text.textContent = 'Sudah Selesai!';
+            } else {
+                btn.classList.remove('completed');
+                btn.innerHTML = '<i class="fa-solid fa-check"></i>';
+                text.textContent = 'Tandai Selesai';
+            }
+        }
+
+        function updateCardState(index) {
+            const cards = document.querySelectorAll('.learn-card');
+            if (cards[index]) {
+                cards[index].classList.add('completed');
+                const btn = cards[index].querySelector('.btn-card');
+                if (btn) btn.textContent = '✓ Selesai';
+            }
+        }
+
+        function navigateMaterial(direction) {
+            let newIndex = currentMaterialIndex + direction;
+            if (newIndex < 0) newIndex = learningMaterials.length - 1;
+            if (newIndex >= learningMaterials.length) newIndex = 0;
+            openMaterialModal(newIndex);
+        }
+
+        function checkCertificateEligibility() {
+            // Example: 5 materials done to claim
+            const claimBtn = document.getElementById('claimCertBtn');
+            if (claimBtn) {
+                if (completedMaterials.length >= 3) { // Require at least 3 for demo
+                    claimBtn.disabled = false;
+                    claimBtn.classList.add('unlocked');
+                }
+            }
+        }
+
+        function claimCertificate() {
+            const name = prompt("Masukkan Nama Lengkap untuk Sertifikat:", "Eco Warrior");
+            if (name) {
+                document.getElementById('certNameDisplay').innerText = name;
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                document.getElementById('certDateDisplay').innerText = new Date().toLocaleDateString('id-ID', options);
+                document.getElementById('certModal').classList.add('active');
+            }
+        }
+
+        function closeCertModal() {
+            document.getElementById('certModal').classList.remove('active');
+        }
+
+        // Initialize completed states on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            completedMaterials.forEach(index => updateCardState(index));
+            checkCertificateEligibility();
+        });
+
+        // Close modal on escape or overlay click
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeMaterialModal();
+        });
+
+        document.getElementById('materialModal')?.addEventListener('click', e => {
+            if (e.target.classList.contains('material-modal-overlay')) {
+                closeMaterialModal();
+            }
+        });
+    </script>
+   
+
+    <!-- CERTIFICATE MODAL -->
+    <div class="cert-modal-overlay" id="certModal">
+        <div class="cert-modal-content">
+            <button class="cert-close-btn" onclick="closeCertModal()"><i class="fa-solid fa-xmark"></i></button>
+            <div class="certificate-paper" id="certificateToPrint">
+                <div class="cert-border"></div>
+                <div class="cert-header">
+                    <i class="fa-solid fa-leaf cert-logo-icon"></i>
+                    <h2>CERTIFICATE OF ACHIEVEMENT</h2>
+                    <p class="cert-subtitle">PROUDLY PRESENTED TO</p>
+                </div>
+                <div class="cert-body">
+                    <h1 id="certNameDisplay">Nama Pengguna</h1>
+                    <div class="cert-line"></div>
+                    <p class="cert-desc">
+                        Telah berhasil menyelesaikan seluruh rangkaian pembelajaran dan eksperimen di <br>
+                        <strong>EcoLearn Innovation Lab</strong>.<br>
+                        Berdedikasi tinggi sebagai Agen Perubahan Lingkungan Masa Depan.
+                    </p>
+                </div>
+                <div class="cert-footer">
+                    <div class="cert-sign">
+                        <div class="sign-line">Dr. Eco Green</div>
+                        <span>Head of EcoLearn</span>
+                    </div>
+                    <div class="cert-seal">
+                        <i class="fa-solid fa-award"></i>
+                        <span>OFFICIAL CERTIFIED</span>
+                    </div>
+                    <div class="cert-sign">
+                        <div class="sign-line" id="certDateDisplay">29 Dec 2025</div>
+                        <span>Date Issued</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cert-actions">
+                <button class="btn-primary" onclick="window.print()"><i class="fa-solid fa-print"></i> Print / Save
+                    PDF</button>
+                <button class="btn-glass" onclick="closeCertModal()">Close</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

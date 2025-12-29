@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoLearn - The Future of Green Education</title>
+
+  <!-- FONTS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&family=Space+Grotesk:wght@300;400;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- ICONS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- ANIMATION -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+
+  <!-- LOADER -->
+  <div id="ecoload-screen">
+    <div class="ecoload-inner">
+      <i class="fa-solid fa-leaf ecoload-icon"></i>
+      <div class="ecoload-text">ECOLEARN</div>
+      <p style="color: var(--text-muted); letter-spacing: 1px;">Initiating Eco-Protocol...</p>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">
+        <i class="fa-solid fa-leaf"></i> EcoLearn
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="active">Beranda</a>
+        <a href="belajar.html">Belajar</a>
+        <a href="komunitas.html">Komunitas</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="kontak.html">Kontak</a>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="ultra-hero-section">
+    <div class="hero-orb orb-1"></div>
+    <div class="hero-orb orb-2"></div>
+
+    <div class="ultra-hero-container" data-aos="zoom-out" data-aos-duration="1000">
+      <h1 class="ultra-hero-title">
+        THE FUTURE OF <br> <span class="text-glow">GREEN EDUCATION</span>
+      </h1>
+      <p class="ultra-hero-subtitle">
+        Platform edukasi lingkungan generasi baru. Modern, Immersive, dan berdampak nyata bagi bumi.
+      </p>
+
+      <div class="hero-btns">
+        <a href="#intro" class="btn-primary">
+          Get Started <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="belajar.html" class="btn-glass">
+          Explore Now
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- INTRO SECTION (Glass Redesign) -->
+  <section id="intro" style="padding: 100px 0; position: relative;">
+    <div class="container">
+      <div class="glass-panel"
+        style="padding: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
+
+        <div data-aos="fade-right">
+          <div style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-neon);">
+            <img src="image/intro.jpg" alt="Intro EcoLearn"
+              style="width: 100%; height: auto; transform: scale(1.05); transition: 0.5s;">
+          </div>
+        </div>
+
+        <div data-aos="fade-left">
+          <h2 class="text-gradient" style="font-size: 3rem; margin-bottom: 20px;">Tentang EcoLearn</h2>
+          <p style="color: var(--text-glass); font-size: 1.1rem; margin-bottom: 20px;">
+            EcoLearn meredefinisikan cara kita belajar tentang lingkungan. Dengan pendekatan visual yang
+            <strong>deeply immersive</strong>, kami mengubah teori membosankan menjadi pengalaman interaktif.
+          </p>
+          <p style="color: var(--text-muted); margin-bottom: 30px;">
+            Dari 3R (Reduce, Reuse, Recycle) hingga energi terbarukan, semua materi dikemas dalam format
+            masa depan untuk menciptakan kebiasaan hijau yang abadi.
+          </p>
+
+          <ul style="display: flex; flex-direction: column; gap: 15px;">
+            <li style="display: flex; align-items: center; gap: 15px; color: var(--text-white);">
+              <i class="fa-solid fa-check-circle" style="color: var(--primary);"></i> Pembelajaran Interaktif 3D
+            </li>
+            <li style="display: flex; align-items: center; gap: 15px; color: var(--text-white);">
+              <i class="fa-solid fa-check-circle" style="color: var(--primary);"></i> Komunitas Global & Impact
+            </li>
+            <li style="display: flex; align-items: center; gap: 15px; color: var(--text-white);">
+              <i class="fa-solid fa-check-circle" style="color: var(--primary);"></i> Tracker Kebiasaan Hijau
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES GRID (Holographic) -->
+  <section style="padding: 100px 0;">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 60px;" data-aos="fade-up">
+        <span style="color: var(--primary); font-weight: 700; letter-spacing: 2px; text-transform: uppercase;">Why
+          EcoLearn?</span>
+        <h2 style="font-size: 3rem; margin-top: 10px;">Revolusi <span class="text-gradient">Edukasi Sampah</span></h2>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+
+        <!-- Card 1 -->
+        <div class="glass-panel" style="padding: 40px; text-align: left;" data-aos="fade-up" data-aos-delay="0">
+          <i class="fa-solid fa-trash-can" style="font-size: 2.5rem; color: var(--secondary); margin-bottom: 20px;"></i>
+          <h3>Masalah Sampah</h3>
+          <p style="color: var(--text-glass); margin-top: 10px;">Pahami akar permasalahan limbah global dan dampaknya
+            terhadap ekosistem kita.</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="glass-panel" style="padding: 40px; text-align: left;" data-aos="fade-up" data-aos-delay="100">
+          <i class="fa-solid fa-book-open" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 20px;"></i>
+          <h3>Edukasi Modern</h3>
+          <p style="color: var(--text-glass); margin-top: 10px;">Modul belajar yang dirancang khusus untuk generasi
+            digital. Singkat, padat, visual.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="glass-panel" style="padding: 40px; text-align: left;" data-aos="fade-up" data-aos-delay="200">
+          <i class="fa-solid fa-leaf" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 20px;"></i>
+          <h3>Dampak Nyata</h3>
+          <p style="color: var(--text-glass); margin-top: 10px;">Setiap langkah kecilmu di sini dikonversi menjadi aksi
+            nyata penanaman pohon.</p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="glass-panel" style="padding: 40px; text-align: left;" data-aos="fade-up" data-aos-delay="300">
+          <i class="fa-solid fa-users" style="font-size: 2.5rem; color: #ff0055; margin-bottom: 20px;"></i>
+          <h3>Komunitas</h3>
+          <p style="color: var(--text-glass); margin-top: 10px;">Bergabung dengan ribuan agen perubahan lainnya dalam
+            misi menyelamatkan bumi.</p>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="glass-panel" style="padding: 40px; text-align: left;" data-aos="fade-up" data-aos-delay="400">
+          <i class="fa-solid fa-vr-cardboard" style="font-size: 2.5rem; color: #a020f0; margin-bottom: 20px;"></i>
+          <h3>Virtual Reality</h3>
+          <p style="color: var(--text-glass); margin-top: 10px;">Jelajahi hutan dan lautan secara virtual untuk melihat
+            apa yang kita perjuangkan.</p>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="glass-panel" style="padding: 40px; text-align: left;" data-aos="fade-up" data-aos-delay="500">
+          <i class="fa-solid fa-chart-line" style="font-size: 2.5rem; color: #00e5ff; margin-bottom: 20px;"></i>
+          <h3>Live Tracker</h3>
+          <p style="color: var(--text-glass); margin-top: 10px;">Pantau progres belajar dan kontribusimu secara
+            real-time dengan grafik interaktif.</p>
+        </div>
+
+        <!-- card 7 -->
+        <div class="glass-panel" style="padding: 40px; text-align: left;" data-aos="fade-up" data-aos-delay="500">
+          <i class="fa-solid fa-hand-holding-heart" style="font-size: 2.5rem; color: #00e5ff; margin-bottom: 20px;"></i>
+          <h3>Aksi Sosial & Donasi</h3>
+          </h3>
+          <p style="color: var(--text-glass); margin-top: 10px;">Dukung kegiatan lingkungan secara langsung.</p>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="glass-panel" style="padding: 40px; text-align: left;" data-aos="fade-up" data-aos-delay="500">
+          <i class="fa-solid fa-tree" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 20px;"></i>
+          <h3>Program Penanaman Pohon</h3>
+          <p style="color: var(--text-glass); margin-top: 10px;">Setiap progres pengguna ikut berkontribusi ke aksi
+            nyata.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DEEP LEARNING (Scroll Journey) -->
+  <section class="long-eco-section" style="padding: 100px 0;">
+    <div class="container">
+      <h2 style="font-size: 3rem; text-align: center; margin-bottom: 80px;" data-aos="fade-up">Deep Dive: <span
+          class="text-gradient">Planet Earth</span></h2>
+
+      <!-- Item 1 -->
+      <div style="display: flex; align-items: center; gap: 50px; margin-bottom: 100px; flex-wrap: wrap;"
+        data-aos="fade-up">
+        <div style="flex: 1; min-width: 300px;">
+          <img src="image/earth.jpg" style="border-radius: 20px; box-shadow: var(--shadow-float);" class="hover-lift">
+        </div>
+        <div style="flex: 1; min-width: 300px;">
+          <h3 style="font-size: 2rem; margin-bottom: 20px; color: var(--primary);">Global Awareness</h3>
+          <p style="color: var(--text-glass); font-size: 1.1rem;">
+            Bumi kita adalah satu-satunya rumah. Memahami kompleksitas ekosistem global adalah langkah pertama untuk
+            melindunginya.
+            EcoLearn membawa data satelit real-time ke layar Anda.
+          </p>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div
+        style="display: flex; flex-direction: row-reverse; align-items: center; gap: 50px; margin-bottom: 100px; flex-wrap: wrap;"
+        data-aos="fade-up">
+        <div style="flex: 1; min-width: 300px;">
+          <img src="image/forest.jpg" style="border-radius: 20px; box-shadow: var(--shadow-float);" class="hover-lift">
+        </div>
+        <div style="flex: 1; min-width: 300px;">
+          <h3 style="font-size: 2rem; margin-bottom: 20px; color: var(--secondary);">Forest Preservation</h3>
+          <p style="color: var(--text-glass); font-size: 1.1rem;">
+            Hutan tropis menyimpan 80% keanekaragaman hayati dunia. Pelajari bagaimana reboisasi modern menggunakan
+            drone dan AI
+            dapat mempercepat pemulihan paru-paru dunia.
+          </p>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div style="display: flex; align-items: center; gap: 50px; margin-bottom: 100px; flex-wrap: wrap;"
+        data-aos="fade-up">
+        <div style="flex: 1; min-width: 300px;">
+          <img src="image/recycle.jpg" style="border-radius: 20px; box-shadow: var(--shadow-float);" class="hover-lift">
+        </div>
+        <div style="flex: 1; min-width: 300px;">
+          <h3 style="font-size: 2rem; margin-bottom: 20px; color: var(--accent);">Advanced Recycling</h3>
+          <p style="color: var(--text-glass); font-size: 1.1rem;">
+            Daur ulang bukan lagi sekadar memilah sampah. Teknologi bioplastik dan material sirkular membuka era baru
+            di mana konsep "sampah" tidak lagi relevan.
+          </p>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div
+        style="display: flex; flex-direction: row-reverse; align-items: center; gap: 50px; margin-bottom: 100px; flex-wrap: wrap;"
+        data-aos="fade-up">
+        <div style="flex: 1; min-width: 300px;">
+          <img src="image/clean-energy.jpg" style="border-radius: 20px; box-shadow: var(--shadow-float);"
+            class="hover-lift">
+        </div>
+        <div style="flex: 1; min-width: 300px;">
+          <h3 style="font-size: 2rem; margin-bottom: 20px; color: var(--secondary);">New Energy</h3>
+          <p style="color: var(--text-glass); font-size: 1.1rem;">Energi terbarukan seperti matahari, angin, dan air
+            menjadi solusi masa depan untuk dunia yang lebih hijau dan bebas polusi.
+          </p>
+        </div>
+      </div>
+
+      <!-- Item 5 -->
+      <div style="display: flex; align-items: center; gap: 50px; margin-bottom: 100px; flex-wrap: wrap;"
+        data-aos="fade-up">
+        <div style="flex: 1; min-width: 300px;">
+          <img src="image/ocean.jpg" style="border-radius: 20px; box-shadow: var(--shadow-float);" class="hover-lift">
+        </div>
+        <div style="flex: 1; min-width: 300px;">
+          <h3 style="font-size: 2rem; margin-bottom: 20px; color: var(--accent);">Public awareness</h3>
+          <p style="color: var(--text-glass); font-size: 1.1rem;">
+            Laut kita semakin terancam oleh sampah plastik. Pelajari bagaimana tindakan sederhana bisa membantu
+            memulihkan ekosistem laut..
+          </p>
+        </div>
+      </div>
+
+      <!-- Item 6 -->
+      <div
+        style="display: flex; flex-direction: row-reverse; align-items: center; gap: 50px; margin-bottom: 100px; flex-wrap: wrap;"
+        data-aos="fade-up">
+        <div style="flex: 1; min-width: 300px;">
+          <img src="image/community.jpg" style="border-radius: 20px; box-shadow: var(--shadow-float);"
+            class="hover-lift">
+        </div>
+        <div style="flex: 1; min-width: 300px;">
+          <h3 style="font-size: 2rem; margin-bottom: 20px; color: var(--secondary);">Hero Community</h3>
+          <p style="color: var(--text-glass); font-size: 1.1rem;">Komunitas hijau di seluruh Indonesia berkolaborasi
+            untuk membawa perubahan nyata. Kamu bisa menjadi bagian dari gerakan ini..
+          </p>
+        </div>
+      </div>
+
+      <!-- Item 7 -->
+      <div style="display: flex; align-items: center; gap: 50px; margin-bottom: 100px; flex-wrap: wrap;"
+        data-aos="fade-up">
+        <div style="flex: 1; min-width: 300px;">
+          <img src="image/habitat.jpg" style="border-radius: 20px; box-shadow: var(--shadow-float);" class="hover-lift">
+        </div>
+        <div style="flex: 1; min-width: 300px;">
+          <h3 style="font-size: 2rem; margin-bottom: 20px; color: var(--accent);">habitat preservation</h3>
+          <p style="color: var(--text-glass); font-size: 1.1rem;">
+            Melindungi satwa liar bukan hanya soal menjaga spesies, tapi juga menjaga keseimbangan ekosistem secara
+            keseluruhan.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENT / PARTNERS -->
+  <!-- ACHIEVEMENT / PARTNERS -->
+  <section class="partners-section">
+    <div class="partners-bg-glow"></div>
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="badge-pill">OUR NETWORK</span>
+        <h2>Global Impact & <span class="text-gradient">Partners</span></h2>
+        <p class="section-desc">Berkolaborasi dengan institusi terkemuka dunia untuk masa depan yang lebih hijau.</p>
+      </div>
+
+      <!-- PARTNER MARQUEE -->
+      <div class="partner-marquee" data-aos="fade-up" data-aos-delay="100">
+        <div class="marquee-track">
+          <div class="partner-logo"><i class="fa-brands fa-google"></i> <span>Google Earth</span></div>
+          <div class="partner-logo"><i class="fa-brands fa-microsoft"></i> <span>Microsoft AI for Earth</span></div>
+          <div class="partner-logo"><i class="fa-solid fa-leaf"></i> <span>WWF Indonesia</span></div>
+          <div class="partner-logo"><i class="fa-solid fa-tree"></i> <span>Greenpeace</span></div>
+          <div class="partner-logo"><i class="fa-solid fa-droplet"></i> <span>UN Water</span></div>
+          <div class="partner-logo"><i class="fa-solid fa-recycle"></i> <span>Plastic Bank</span></div>
+          <div class="partner-logo"><i class="fa-solid fa-solar-panel"></i> <span>Tesla Energy</span></div>
+          <div class="partner-logo"><i class="fa-brands fa-aws"></i> <span>AWS Sustainability</span></div>
+          <!-- Duplicate for infinity scroll -->
+          <div class="partner-logo"><i class="fa-brands fa-google"></i> <span>Google Earth</span></div>
+          <div class="partner-logo"><i class="fa-brands fa-microsoft"></i> <span>Microsoft AI for Earth</span></div>
+          <div class="partner-logo"><i class="fa-solid fa-leaf"></i> <span>WWF Indonesia</span></div>
+          <div class="partner-logo"><i class="fa-solid fa-tree"></i> <span>Greenpeace</span></div>
+        </div>
+      </div>
+
+      <!-- ACHIEVEMENTS GRID -->
+      <div class="achievements-grid">
+        <div class="achievement-card glow-green" data-aos="zoom-in" data-aos-delay="200">
+          <div class="ach-icon"><i class="fa-solid fa-trophy"></i></div>
+          <div class="ach-content">
+            <h3>Green Award 2024</h3>
+            <p>Best Environmental Education Platform in Asia Pacific</p>
+            <div class="ach-stats">
+              <span><i class="fa-solid fa-star"></i> 4.9/5 Rating</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="achievement-card glow-blue" data-aos="zoom-in" data-aos-delay="300">
+          <div class="ach-icon"><i class="fa-solid fa-globe"></i></div>
+          <div class="ach-content">
+            <h3>UN Earth Guardian</h3>
+            <p>Official Partner of United Nations Environment Programme</p>
+            <div class="ach-stats">
+              <span><i class="fa-solid fa-users"></i> 1M+ Impact</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="achievement-card glow-gold" data-aos="zoom-in" data-aos-delay="400">
+          <div class="ach-icon"><i class="fa-solid fa-medal"></i></div>
+          <div class="ach-content">
+            <h3>Zero Waste Hero</h3>
+            <p>Penghargaan tertinggi untuk komunitas bebas sampah.</p>
+            <div class="ach-stats">
+              <span><i class="fa-solid fa-check-circle"></i> Certified</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section style="padding: 100px 0;">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 60px;" data-aos="fade-up">Voices of Change</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+
+        <div class="glass-panel" style="padding: 30px;" data-aos="fade-up">
+          <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+            <img src="image/user1.jpg"
+              style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary);">
+            <div>
+              <h4 style="margin: 0;">Andika</h4>
+              <span style="font-size: 0.8rem; color: var(--primary);">Web Developer</span>
+            </div>
+          </div>
+          <p style="font-style: italic; color: var(--text-glass);">"Desain EcoLearn yang baru benar-benar gila! Belajar
+            lingkungan terasa seperti bermain game sci-fi masa depan."</p>
+        </div>
+
+        <div class="glass-panel" style="padding: 30px;" data-aos="fade-up" data-aos-delay="100">
+          <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+            <img src="image/user2.jpg"
+              style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--secondary);">
+            <div>
+              <h4 style="margin: 0;">Sarah</h4>
+              <span style="font-size: 0.8rem; color: var(--secondary);">Mahasiswa TI</span>
+            </div>
+          </div>
+          <p style="font-style: italic; color: var(--text-glass);">"Visualnya sangat membantu. Saya jadi lebih paham
+            tentang complex recycling process berkat ilustrasi 3D-nya."</p>
+        </div>
+
+        <div class="glass-panel" style="padding: 30px;" data-aos="fade-up" data-aos-delay="200">
+          <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+            <img src="image/user3.jpg"
+              style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent);">
+            <div>
+              <h4 style="margin: 0;">Rangga</h4>
+              <span style="font-size: 0.8rem; color: var(--accent);">Programmer</span>
+            </div>
+          </div>
+          <p style="font-style: italic; color: var(--text-glass);">"This is God-tier UI. Smooth, fast, and responsive.
+            Benar-benar standar baru untuk web edukasi."</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FOOTER -->
+  <footer
+    style="background: var(--bg-depth); padding: 80px 0 30px; border-top: 1px solid var(--glass-border); text-align: center;">
+    <div class="container">
+      <h2 style="margin-bottom: 20px;">Siap Menjadi Pahlawan Bumi?</h2>
+      <p
+        style="color: var(--text-muted); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
+        Bergabunglah sekarang. Satu langkah kecil darimu, satu lompatan besar bagi kelestarian planet kita.
+      </p>
+      <a href="belajar.html" class="btn-primary" style="margin-bottom: 60px; text-align: center;">Mulai Misi
+        Sekarang</a>
+
+      <div
+        style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 30px; color: var(--text-muted); font-size: 0.9rem;">
+        &copy; 2025 EcoLearn God-Tier Edition. Designed by Antigravity.
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="script.js"></script>
+  <script>
+    // Inline Init for Immediate Effect
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 50
+    });
+
+    // Simple Loader Logic
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('ecoload-screen').classList.add('loaded');
+      }, 1000);
+    });
+
+
+    // Mobile Menu
+    function toggleMenu() {
+      const nav = document.getElementById('navLinks');
+      nav.classList.toggle('active');
+    }
+  </script>
+</body>
+
+</html>
